@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b3c6y3y6b5bi4"]
+
+[ext_resource type="PackedScene" uid="uid://bfkh5g0igfy7e" path="res://scenes/player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/player.gd" id="2_h2yge"]
+[ext_resource type="TileSet" uid="uid://bb4jkyk6guxgg" path="res://tilesets/placeholder_tiles.tres" id="3_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=1870406462]
+
+[node name="Player" parent="." unique_id=625837165 instance=ExtResource("1_0xm2m")]
+script = ExtResource("2_h2yge")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=123259617]
+tile_set = ExtResource("3_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=280715277]
