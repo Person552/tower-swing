@@ -13,7 +13,7 @@ config_version=5
 config/name="Tower: Swing"
 run/main_scene="uid://b3c6y3y6b5bi4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://textures/icon.svg"
+boot_splash/image="uid://bnlcajh5b83ep"
 
 [display]
 

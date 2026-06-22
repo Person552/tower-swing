@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://bb4jkyk6guxgg"]
 
-[ext_resource type="Texture2D" uid="uid://bbonfrmug0lrx" path="res://textures/Placeholder Tileset.png" id="1_dv67v"]
+[ext_resource type="Texture2D" uid="uid://15ii2dkscquy" path="res://textures/Placeholder Tileset.png" id="1_dv67v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1tuh"]
 resource_name = "Main"

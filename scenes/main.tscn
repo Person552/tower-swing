@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b3c6y3y6b5bi4"]
+[gd_scene format=3 uid="uid://b3c6y3y6b5bi4"]
 
 [ext_resource type="TileSet" uid="uid://bb4jkyk6guxgg" path="res://tilesets/placeholder_tiles.tres" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bfkh5g0igfy7e" path="res://scenes/player.tscn" id="2_0wfyh"]
@@ -6,7 +6,6 @@
 [node name="Main" type="Node2D" unique_id=1870406462]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=123259617]
-tile_map_data = PackedByteArray("AAD8/wUAAAAAAAEAAAD9/wUAAAABAAEAAAD+/wUAAAABAAEAAAD+/wYAAAABAAIAAAD9/wYAAAABAAIAAAD8/wYAAAAAAAIAAAD//wUAAAABAAEAAAD//wYAAAABAAIAAAD8/wcAAAAAAAMAAAD9/wcAAAABAAMAAAD+/wcAAAABAAMAAAD//wcAAAABAAMAAAAAAAUAAAABAAEAAAABAAUAAAACAAEAAAABAAYAAAACAAIAAAABAAcAAAACAAMAAAAAAAcAAAABAAMAAAAAAAYAAAABAAIAAAAEAAQAAAABAAAAAAAFAAQAAAADAAAAAAAKAAIAAAABAAAAAAALAAIAAAADAAAAAAD5/wAAAAADAAAAAAD4/wAAAAABAAAAAAA=")
 tile_set = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=280715277]
