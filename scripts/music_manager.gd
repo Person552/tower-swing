@@ -26,7 +26,7 @@ func _process(delta):
 	current_beat = floor((time/60)*bpm)
 	
 	current_lateness = floor((time - ((current_beat/bpm)*60))*1000)
-	print(current_lateness)
+	#print(current_lateness)
 	
 	if current_beat != prev_frame_beat :
 		beat.emit(current_beat)
