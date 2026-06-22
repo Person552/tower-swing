@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bfkh5g0igfy7e"]
 
 [ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://4uqo352fwre5" path="res://textures/Placeholder Character.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dikj37ddicnvj" path="res://textures/clown.png" id="2_g2els"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psq6u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qhqgy")
+"texture": ExtResource("2_g2els")
 }],
 "loop": 1,
 "name": &"default",
@@ -16,7 +16,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bvp3"]
 radius = 8.0
-height = 24.0
+height = 32.0
 
 [node name="Player" type="CharacterBody2D" unique_id=625837165]
 script = ExtResource("1_g2els")
