@@ -25,11 +25,11 @@ func _process(delta):
 	var prev_frame_beat = current_beat
 	current_beat = floor((time/60)*bpm)
 	
+	current_lateness = floor((time - ((current_beat/bpm)*60))*1000)
+	print(current_lateness)
+	
 	if current_beat != prev_frame_beat :
 		beat.emit(current_beat)
-	
-	current_lateness = time/60*bpm - current_beat
-	
 
 func _on_beat(beat_num: Variant) -> void:
-	print(current_beat, " | ", current_lateness)
+	pass
