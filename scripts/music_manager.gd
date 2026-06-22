@@ -3,6 +3,10 @@ extends Node
 var time_begin
 var time_delay
 var bpm
+var current_beat
+var current_lateness
+
+signal beat(beat_num)
 
 func _ready():
 	time_begin = Time.get_ticks_usec()
@@ -17,6 +21,15 @@ func _process(delta):
 	time -= time_delay
 	# May be below 0 (did not begin yet).
 	time = max(0, time)
-	var current_beat = floor((time/60)*bpm)
 	
-	print("Time in beats: ", current_beat)
+	var prev_frame_beat = current_beat
+	current_beat = floor((time/60)*bpm)
+	
+	if current_beat != prev_frame_beat :
+		beat.emit(current_beat)
+	
+	current_lateness = time/60*bpm - current_beat
+	
+
+func _on_beat(beat_num: Variant) -> void:
+	print(current_beat, " | ", current_lateness)

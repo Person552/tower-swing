@@ -4,11 +4,7 @@
 [ext_resource type="Script" uid="uid://bfk5uunqk1tpt" path="res://scripts/music_manager.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bfkh5g0igfy7e" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_jyhfs"]
-[ext_resource type="Shader" uid="uid://jldok32hacrb" path="res://shaders/test.gdshader" id="3_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://b4rvbbjrlorey" path="res://textures/shader_white.png" id="4_tbgi4"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynw7a"]
-shader = ExtResource("3_jyhfs")
+[ext_resource type="Script" uid="uid://dgpktfofou54" path="res://scripts/camera.gd" id="4_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1870406462]
 
@@ -24,11 +20,8 @@ tile_map_data = PackedByteArray("AADS/8D/AQAAAAEAAADS/8H/AQAAAAIAAADS/8L/AQAAAAI
 tile_set = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=280715277]
+script = ExtResource("4_tbgi4")
 
 [node name="Player" parent="." unique_id=625837165 instance=ExtResource("2_0wfyh")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=642111236]
-material = SubResource("ShaderMaterial_ynw7a")
-position = Vector2(263.50003, 43.999947)
-scale = Vector2(33.187504, 69.12499)
-texture = ExtResource("4_tbgi4")
+[connection signal="beat" from="MusicManager" to="MusicManager" method="_on_beat"]
