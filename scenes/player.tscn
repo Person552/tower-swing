@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bfkh5g0igfy7e"]
 
-[ext_resource type="Texture2D" uid="uid://4uqo352fwre5" path="res://textures/Placeholder Character.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://4uqo352fwre5" path="res://textures/Placeholder Character.png" id="2_qhqgy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psq6u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4flbx")
+"texture": ExtResource("2_qhqgy")
 }],
 "loop": 1,
 "name": &"default",
@@ -18,6 +19,7 @@ radius = 8.0
 height = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=625837165]
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=956571625]
 sprite_frames = SubResource("SpriteFrames_psq6u")
