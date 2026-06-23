@@ -11,4 +11,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	player_pos = $"..".position
 	self.position = target_pos
-	
+	$Chain.region_rect.size.y = self.position.length()
+	self.look_at(player_pos)

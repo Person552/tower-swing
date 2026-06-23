@@ -22,11 +22,15 @@ height = 32.0
 [node name="Player" type="CharacterBody2D" unique_id=625837165]
 script = ExtResource("1_g2els")
 
+[node name="Hook" parent="." unique_id=783533666 instance=ExtResource("3_qhqgy")]
+visible = false
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=956571625]
 sprite_frames = SubResource("SpriteFrames_psq6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833400411]
 shape = SubResource("CapsuleShape2D_1bvp3")
 
-[node name="Hook" parent="." unique_id=783533666 instance=ExtResource("3_qhqgy")]
-visible = false
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1435561840]
+node_a = NodePath("../Hook")
+node_b = NodePath("..")

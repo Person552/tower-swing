@@ -32,9 +32,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HookPoint" type="Node2D" unique_id=1162302159]
+[node name="HookPoint" type="Node2D" unique_id=946499217]
 script = ExtResource("1_y31g3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1647605189]
+z_index = -1
 sprite_frames = SubResource("SpriteFrames_psq6u")
 animation = &"swing"
