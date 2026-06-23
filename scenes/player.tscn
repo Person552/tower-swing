@@ -30,7 +30,3 @@ sprite_frames = SubResource("SpriteFrames_psq6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833400411]
 shape = SubResource("CapsuleShape2D_1bvp3")
-
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1435561840]
-node_a = NodePath("../Hook")
-node_b = NodePath("..")
