@@ -12,7 +12,7 @@ func _ready():
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	bpm = $Player.stream.bpm
-	$Player.play()
+	#$Player.play()
 
 func _process(delta):
 	# Obtain from ticks.
