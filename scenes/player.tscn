@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfkh5g0igfy7e"]
 
-[ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/simulation_clown.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dikj37ddicnvj" path="res://textures/clown.png" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://bcxni5k3qwdem" path="res://scenes/hook.tscn" id="3_qhqgy"]
 

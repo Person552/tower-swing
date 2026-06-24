@@ -14,6 +14,16 @@ var target_hookpoint = 0
 var swing_speed = 0
 var swing_distance = 0.0
 
+#const SWING_SPEED_CHANGE_BASE = 1.044
+#const SWING_SPEED_CHANGE_DENOMINATOR = 4.6
+const SWING_SPEED_CHANGE_MULT = -0.08
+#func calculate_swing_speed_change(distance : float) :
+	#var is_negative = distance < 0
+	#distance = abs(distance)
+	#var speed = sqrt(2*get_gravity().length()*distance)
+	#if is_negative : speed *= -1
+	#return speed
+
 func get_hookpoint_from_id(id: int) :
 	for hookpoint in $"../HookPoints".get_children() :
 		if hookpoint.id == id :
@@ -31,16 +41,16 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and not hooked :
 		velocity.x = WALKSPEED
 
-	if Input.is_action_just_pressed("hook") :
-		print(music_manager.current_lateness)
-		swing_speed = 0.0
-		hooked = true
-	
-	if Input.is_action_just_released("hook") :
-		print(music_manager.current_lateness)
-		target_hookpoint = (target_hookpoint+1)%2
-		hooked = false
-		swing_distance = 0.0
+	#if Input.is_action_just_pressed("hook") :
+		#print(music_manager.current_lateness)
+		#swing_speed = 0.0
+		#hooked = true
+	#
+	#if Input.is_action_just_released("hook") :
+		#print(music_manager.current_lateness)
+		#target_hookpoint = (target_hookpoint+1)%3
+		#hooked = false
+		#swing_distance = 0.0
 
 	move_and_slide()
 	
@@ -59,10 +69,15 @@ func _physics_process(delta: float) -> void:
 				swing_speed = velocity.length()
 				if velocity.dot(direction) < 0 :
 					swing_speed *= -1
+				if hookpoint_type == "loop" :
+					swing_speed *= 2
 			if hookpoint_type == "swing" :
-				swing_speed += (self.position.x - hookpoint_ref.position.x) * -0.1
-			elif hookpoint_type == "loop" :
-				swing_speed += 3
+				#swing_speed = calculate_swing_speed_change(self.position.distance_to(hookpoint_ref.position))
+				swing_speed += (self.position.x - hookpoint_ref.position.x) * SWING_SPEED_CHANGE_MULT
+				#swing_speed *= 0.99
+				#swing_speed = sqrt(2*get_gravity().length()*abs(self.position.y - hookpoint_ref.position.y))
+			#elif hookpoint_type == "loop" :
+				#swing_speed += 3
 			#swing_speed *= 0.99
 			velocity = direction * swing_speed
 			
@@ -81,3 +96,14 @@ func _physics_process(delta: float) -> void:
 
 	else :
 		$Hook.visible = false
+
+
+func _on_music_manager_beat(beat_num: Variant) -> void:
+	if beat_num < len(music_manager.current_beat_list) :
+		if music_manager.current_beat_list[beat_num] == "r" :
+			target_hookpoint = (target_hookpoint+1)%3
+			hooked = false
+			swing_distance = 0.0
+		elif music_manager.current_beat_list[beat_num] == "h" :
+			swing_speed = 0.0
+			hooked = true
