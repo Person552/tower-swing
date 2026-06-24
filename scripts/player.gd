@@ -38,8 +38,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("hook") :
 		print(music_manager.current_lateness)
-		#target_hookpoint = (target_hookpoint+1)%3
-		target_hookpoint = 0
+		target_hookpoint = (target_hookpoint+1)%2
 		hooked = false
 		swing_distance = 0.0
 
@@ -54,10 +53,12 @@ func _physics_process(delta: float) -> void:
 			swing_distance = self.position.distance_to(get_hookpoint_from_id(target_hookpoint).position)
 		
 		if hookpoint_type in ["swing", "loop"] :
-			if swing_speed == 0.0 :
-				swing_speed = velocity.x
 			var direction = self.position.direction_to(hookpoint_ref.position)
 			direction = direction.rotated(deg_to_rad(90))
+			if swing_speed == 0.0 :
+				swing_speed = velocity.length()
+				if velocity.dot(direction) < 0 :
+					swing_speed *= -1
 			if hookpoint_type == "swing" :
 				swing_speed += (self.position.x - hookpoint_ref.position.x) * -0.1
 			elif hookpoint_type == "loop" :
