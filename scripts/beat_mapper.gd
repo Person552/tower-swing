@@ -87,6 +87,7 @@ func find_closest_beat(current_time) :
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Player.stream = song
 	if FileAccess.file_exists(target_path) :
 		current_beat_list = load_beatmap(target_path)
 	else :
