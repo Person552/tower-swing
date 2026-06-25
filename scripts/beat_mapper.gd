@@ -68,7 +68,7 @@ func save_file() :
 			beat_map_array.append({"start":delay,"release":0,"notes":"Time: %ss"%[time_pressed],"hookpoint type":note_name})
 			current_hookpoint_id += 1
 			delay = 0
-		elif input == "r" :
+		elif input == "r" and current_hookpoint_id > -1 :
 			beat_map_array[current_hookpoint_id]["release"] = delay
 			delay = 0
 		index += 1
