@@ -1,10 +1,17 @@
 @tool
 extends Node2D
 
+const TYPE_COLORS = {
+	"swing":Color("6dffff"),
+	"pull":Color("ef5f4a"),
+	"loop": Color("fee114")
+}
+
 @export_enum("swing", "pull", "loop") var type = "swing" :
 	set(new_type) :
 		type = new_type
 		$AnimatedSprite2D.animation = type
+		$PointLight2D.color = TYPE_COLORS[type]
 @export var id : int
 
 @export var set_release_angle = false

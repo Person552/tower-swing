@@ -183,6 +183,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_y31g3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hawv6"]
+gradient = SubResource("Gradient_y31g3")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="HookPoint" type="Node2D" unique_id=946499217]
 script = ExtResource("1_y31g3")
 
@@ -190,3 +201,9 @@ script = ExtResource("1_y31g3")
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_psq6u")
 animation = &"swing"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=613389608]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+color = Color(0.42745098, 1, 1, 1)
+energy = 0.2
+texture = SubResource("GradientTexture2D_hawv6")
