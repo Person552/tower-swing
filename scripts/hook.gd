@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_pos = $"..".position + $"../Sticky Hand Hardpoint".position
 	self.position = target_pos
 	$StickyHandRing.position.x = self.position.distance_to($"../Sticky Hand Hardpoint".position)
