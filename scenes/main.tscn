@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b3c6y3y6b5bi4"]
+[gd_scene format=3 uid="uid://b3c6y3y6b5bi4"]
 
 [ext_resource type="TileSet" uid="uid://bb4jkyk6guxgg" path="res://tilesets/placeholder_tiles.tres" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bfk5uunqk1tpt" path="res://scripts/music_manager.gd" id="1_sugp2"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://dgpktfofou54" path="res://scripts/camera.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dtrurqm5eg5uu" path="res://scenes/hook_point.tscn" id="6_tefeu"]
-[ext_resource type="Script" uid="uid://bxnha6v8kicd6" path="res://scripts/copycat_clown.gd" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1870406462]
 
@@ -18,7 +17,6 @@ stream = ExtResource("2_jyhfs")
 volume_db = -16.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=123259617]
-tile_map_data = PackedByteArray("AAD8/+//AgARAAMAAAD7/+//AgARAAMAAAD6/+//AgARAAMAAAD3/+//AgARAAMAAAD2/+//AgARAAMAAAD1/+//AgAQAAMAAAD//+//AgARAAMAAAD+/+//AgARAAMAAAAIAO//AgARAAMAAAAHAO//AgARAAMAAAAGAO//AgARAAMAAAAEAO//AgARAAMAAAADAO//AgARAAMAAAACAO//AgARAAMAAAABAO//AgARAAMAAAAAAO//AgARAAMAAAAIAOr/AgARAAMAAAAHAOr/AgARAAMAAAAGAOr/AgARAAMAAAAEAOr/AgARAAMAAAADAOr/AgARAAMAAAACAOr/AgARAAMAAAABAOr/AgAQAAMAAAD7/+X/AgARAAMAAAD6/+X/AgARAAMAAAD4/+X/AgARAAMAAAD3/+X/AgARAAMAAAD2/+X/AgAQAAMAAAD7/+H/AgARAAMAAAD6/+H/AgARAAMAAAD4/+H/AgARAAMAAAD3/+H/AgARAAMAAAD2/+H/AgAQAAMAAAD7/+n/AgARAAMAAAD6/+n/AgARAAMAAAD2/+n/AgAQAAMAAAD3/+n/AgARAAMAAAA=")
 tile_set = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=280715277]
@@ -27,44 +25,66 @@ script = ExtResource("4_tbgi4")
 [node name="HookPoints" type="Node" parent="." unique_id=579849264]
 
 [node name="HookPoint0" parent="HookPoints" unique_id=1162302159 instance=ExtResource("6_tefeu")]
-position = Vector2(79, 91)
+position = Vector2(81, 58)
 type = "pull"
 
-[node name="HookPoint0" parent="HookPoints/HookPoint0" unique_id=946499217 instance=ExtResource("6_tefeu")]
-position = Vector2(884, -48)
-type = "pull"
-
-[node name="HookPoint0" parent="HookPoints/HookPoint0/HookPoint0" unique_id=1339906430 instance=ExtResource("6_tefeu")]
-position = Vector2(211, 40)
-type = "pull"
-
-[node name="HookPoint1" parent="HookPoints" unique_id=527223396 instance=ExtResource("6_tefeu")]
-position = Vector2(206, 78)
+[node name="HookPoint1" parent="HookPoints" unique_id=946499217 instance=ExtResource("6_tefeu")]
+position = Vector2(205, 61)
+type = "loop"
 id = 1
 
-[node name="HookPoint1" parent="HookPoints/HookPoint1" unique_id=329828113 instance=ExtResource("6_tefeu")]
-position = Vector2(320, 15)
-id = 1
-
-[node name="HookPoint2" parent="HookPoints" unique_id=343856038 instance=ExtResource("6_tefeu")]
-position = Vector2(371, 64)
-type = "loop"
+[node name="HookPoint2" parent="HookPoints" unique_id=1474490327 instance=ExtResource("6_tefeu")]
+position = Vector2(355, 52)
 id = 2
 
-[node name="HookPoint2" parent="HookPoints/HookPoint2" unique_id=451867502 instance=ExtResource("6_tefeu")]
-position = Vector2(371, 64)
-type = "loop"
-id = 2
+[node name="HookPoint3" parent="HookPoints" unique_id=493173233 instance=ExtResource("6_tefeu")]
+position = Vector2(495, 54)
+
+[node name="HookPoint4" parent="HookPoints" unique_id=359580564 instance=ExtResource("6_tefeu")]
+position = Vector2(672, 51)
+
+[node name="HookPoint5" parent="HookPoints" unique_id=1248853429 instance=ExtResource("6_tefeu")]
+position = Vector2(820, 49)
+
+[node name="HookPoint6" parent="HookPoints" unique_id=1449280247 instance=ExtResource("6_tefeu")]
+position = Vector2(979, 49)
+
+[node name="HookPoint7" parent="HookPoints" unique_id=1302894851 instance=ExtResource("6_tefeu")]
+position = Vector2(1145, 49)
+type = "pull"
+
+[node name="HookPoint8" parent="HookPoints" unique_id=2060206556 instance=ExtResource("6_tefeu")]
+position = Vector2(1309, 49)
+type = "pull"
+
+[node name="HookPoint9" parent="HookPoints" unique_id=774579998 instance=ExtResource("6_tefeu")]
+position = Vector2(1448, 47)
+type = "pull"
+
+[node name="HookPoint10" parent="HookPoints" unique_id=1943518219 instance=ExtResource("6_tefeu")]
+position = Vector2(1596, 51)
+type = "pull"
+
+[node name="HookPoint11" parent="HookPoints" unique_id=216774055 instance=ExtResource("6_tefeu")]
+position = Vector2(1761, 55)
+type = "pull"
+
+[node name="HookPoint12" parent="HookPoints" unique_id=1815354478 instance=ExtResource("6_tefeu")]
+position = Vector2(1922, 53)
+type = "pull"
+
+[node name="HookPoint13" parent="HookPoints" unique_id=831209253 instance=ExtResource("6_tefeu")]
+position = Vector2(2064, 52)
+type = "pull"
+
+[node name="HookPoint14" parent="HookPoints" unique_id=570173497 instance=ExtResource("6_tefeu")]
+position = Vector2(2221, 54)
+type = "pull"
+
+[node name="HookPoint15" parent="HookPoints" unique_id=1865931048 instance=ExtResource("6_tefeu")]
+position = Vector2(2369, 52)
+type = "pull"
 
 [node name="Player" parent="." unique_id=625837165 instance=ExtResource("2_0wfyh")]
-script = ExtResource("7_o6xl0")
-
-[node name="HookPoint0" parent="." unique_id=886241885 instance=ExtResource("6_tefeu")]
-position = Vector2(1249, 45)
-type = "pull"
-
-[node name="HookPoint0" parent="HookPoint0" unique_id=1026784958 instance=ExtResource("6_tefeu")]
-position = Vector2(-65, -24)
-type = "pull"
 
 [connection signal="beat" from="MusicManager" to="Player" method="_on_music_manager_beat"]
