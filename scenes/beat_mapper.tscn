@@ -4,7 +4,13 @@
 [ext_resource type="AudioStream" uid="uid://dvwf83ar1cf2n" path="res://songs/Fools Masquerade - CHiMERA.mp3" id="2_v6knf"]
 [ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_xw4ct"]
 [ext_resource type="AudioStream" uid="uid://d2lbruwtwkpym" path="res://sounds/metronome.mp3" id="3_0wntc"]
-[ext_resource type="Texture2D" uid="uid://b4rvbbjrlorey" path="res://textures/shader_white.png" id="5_n42sg"]
+
+[sub_resource type="Gradient" id="Gradient_n42sg"]
+colors = PackedColorArray(0.59717613, 0.59717613, 0.5971761, 1, 0.91228896, 0.9122889, 0.91228884, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_psq6u"]
+gradient = SubResource("Gradient_n42sg")
+fill_to = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg64t"]
 bg_color = Color(0, 0, 0, 0.49803922)
@@ -36,7 +42,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7jouc")
-target_path = "res://beatmaps/testmap1.json"
+target_filename = "testmap2.json"
+load_image = true
 song = ExtResource("2_v6knf")
 metronome_sound = true
 
@@ -46,6 +53,16 @@ volume_db = -16.0
 
 [node name="Metronome Player" type="AudioStreamPlayer" parent="." unique_id=2038377088]
 stream = ExtResource("3_0wntc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2126375069]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_psq6u")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1290769495]
 layout_mode = 1
@@ -159,14 +176,40 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_ynw7a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_doqle")
-value = 100.0
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=995709071]
+[node name="BeatOverview" type="TextureRect" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=995709071]
 custom_minimum_size = Vector2(-1, 10)
 custom_maximum_size = Vector2(-1, 10)
 layout_mode = 2
-texture = ExtResource("5_n42sg")
 expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1760200519]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1010307904]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "S - Save Image"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1542049033]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "F - Swing"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1718789897]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "G - Pull"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=188487870]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "H - Loop"
+horizontal_alignment = 1
 
 [connection signal="finished" from="Player" to="." method="_on_player_finished"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
