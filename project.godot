@@ -27,6 +27,10 @@ window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/minec/Documents/0_Clown/tower-swing/videos/video.ogv"
+
 [gui]
 
 theme/custom="uid://c8w4mnmatanx8"
