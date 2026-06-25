@@ -120,11 +120,13 @@ func _process(_delta: float) -> void:
 			self.position += offset_distance * offset_direction
 			
 		elif hookpoint_type == "pull" :
+			var pull_direction = self.position.direction_to(hookpoint_ref.position)
 			if swing_speed == 0.0 :
-				swing_speed = PULL_START_SPEED
+				var dot_product_temp = max(0,velocity.normalized().dot(pull_direction))
+				swing_speed = max(PULL_START_SPEED, (self.velocity*dot_product_temp).length())
 			swing_speed += PULL_ACCELERATION
 			swing_speed = min(swing_speed, PULL_MAX_SPEED)
-			velocity = self.position.direction_to(hookpoint_ref.position) * swing_speed
+			velocity = pull_direction * swing_speed
 			
 		if hookpoint_type in ["pull"] :
 			if self.position.distance_to(hookpoint_ref.position) < 10 :
