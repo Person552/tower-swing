@@ -95,8 +95,8 @@ func _ready() -> void:
 		for i in range($Player.stream.beat_count-len(current_beat_list)) :
 			current_beat_list.append(" ")
 	print(current_beat_list)
-	seek_box.max_value = $Player.stream.get_length()
-	seek_slider.max_value = $Player.stream.get_length()
+	seek_box.max_value = $Player.stream.get_length()-0.1
+	seek_slider.max_value = $Player.stream.get_length()-0.1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
