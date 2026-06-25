@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc3iwum81y1ny"]
 
 [ext_resource type="Script" uid="uid://b3unkbyuvjwva" path="res://scripts/beat_mapper.gd" id="1_7jouc"]
-[ext_resource type="AudioStream" uid="uid://besnubjsng5n3" path="res://songs/Fools Masquerade.mp3" id="2_v6knf"]
+[ext_resource type="AudioStream" path="res://songs/Fools Masquerade.mp3" id="2_v6knf"]
 [ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_xw4ct"]
 [ext_resource type="AudioStream" uid="uid://d2lbruwtwkpym" path="res://sounds/metronome.mp3" id="3_0wntc"]
 
@@ -29,7 +29,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7jouc")
-target_path = "res://beatmaps/fools_masquerade.json"
+target_path = "res://beatmaps/testmap.json"
 song = ExtResource("2_v6knf")
 metronome_sound = true
 
