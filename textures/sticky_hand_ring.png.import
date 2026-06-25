@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d03gj5c6dqnkl"
-path="res://.godot/imported/hand.png-cb54f312e7a01a1fe252f7eca92c69af.ctex"
+uid="uid://b2ujyhu822wg8"
+path="res://.godot/imported/sticky_hand_ring.png-81817bd6c42c4766ef2d3a4c83e53f5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholders/hand.png"
-dest_files=["res://.godot/imported/hand.png-cb54f312e7a01a1fe252f7eca92c69af.ctex"]
+source_file="res://textures/sticky_hand_ring.png"
+dest_files=["res://.godot/imported/sticky_hand_ring.png-81817bd6c42c4766ef2d3a4c83e53f5b.ctex"]
 
 [params]
 

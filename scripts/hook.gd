@@ -9,7 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	player_pos = $"..".position
+	player_pos = $"..".position + $"../Sticky Hand Hardpoint".position
 	self.position = target_pos
-	$Chain.region_rect.size.y = self.position.length()
+	$StickyHandRing.position.x = self.position.distance_to($"../Sticky Hand Hardpoint".position)
+	$Chain.region_rect.size.x = self.position.length()-$StickyHandRing.texture.get_width()
 	self.look_at(player_pos)
