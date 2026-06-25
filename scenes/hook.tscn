@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bcxni5k3qwdem"]
 
-[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://placeholders/hand.png" id="1_p5w6b"]
+[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="1_p5w6b"]
 [ext_resource type="Script" uid="uid://b6ujhu1srlmye" path="res://scripts/hook.gd" id="1_qfoqi"]
-[ext_resource type="Texture2D" uid="uid://nx0lkxs00hpn" path="res://placeholders/arm.png" id="2_lmb2r"]
-[ext_resource type="Texture2D" uid="uid://b2ujyhu822wg8" path="res://placeholders/sticky_hand_ring.png" id="4_76t2v"]
+[ext_resource type="Texture2D" uid="uid://nx0lkxs00hpn" path="res://textures/arm.png" id="2_lmb2r"]
+[ext_resource type="Texture2D" uid="uid://b2ujyhu822wg8" path="res://textures/sticky_hand_ring.png" id="4_76t2v"]
 
 [node name="Hook" type="Node2D" unique_id=770464561]
 script = ExtResource("1_qfoqi")

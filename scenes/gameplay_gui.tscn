@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ds75h0gy1s7fp"]
 
 [ext_resource type="Texture2D" uid="uid://bep12mh6tsype" path="res://placeholders/celeste.webp" id="1_feba3"]
-[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://placeholders/hand.png" id="1_ncqol"]
+[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="1_ncqol"]
 [ext_resource type="Texture2D" uid="uid://n6mbm7h70k83" path="res://placeholders/hookpoint_loop.png" id="1_xevqq"]
 [ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="2_feba3"]
 [ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="3_uo6nn"]
