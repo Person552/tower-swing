@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bep12mh6tsype" path="res://placeholders/celeste.webp" id="1_feba3"]
 [ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="1_ncqol"]
+[ext_resource type="Script" uid="uid://doe86wcrg7to0" path="res://scripts/gameplay_gui.gd" id="1_uo6nn"]
 [ext_resource type="Texture2D" uid="uid://n6mbm7h70k83" path="res://placeholders/hookpoint_loop.png" id="1_xevqq"]
 [ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="2_feba3"]
 [ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="3_uo6nn"]
@@ -18,7 +19,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
-[node name="PauseGUI" type="Control" unique_id=97893995]
+[node name="GameplayGUI" type="Control" unique_id=97893995]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 3
 anchors_preset = 15
@@ -28,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_uo6nn")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2133922235]
@@ -42,8 +44,9 @@ theme_override_constants/margin_top = -10
 theme_override_constants/margin_right = -10
 theme_override_constants/margin_bottom = -10
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=851616366]
+[node name="MainViewport" type="TextureRect" parent="MarginContainer" unique_id=851616366]
 layout_mode = 2
+offset_transform_enabled = true
 texture = ExtResource("1_feba3")
 expand_mode = 1
 
@@ -70,10 +73,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=494703152]
+[node name="ScoreDisplay" type="VBoxContainer" parent="CenterContainer" unique_id=494703152]
 layout_mode = 2
 
-[node name="QualityWord" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1109627099]
+[node name="QualityWord" type="RichTextLabel" parent="CenterContainer/ScoreDisplay" unique_id=1109627099]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.24705882)
@@ -83,10 +86,11 @@ theme_override_constants/shadow_offset_y = 0
 bbcode_enabled = true
 text = "[color=cyan][b]GREAT!"
 fit_content = true
+autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timing" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=364720257]
+[node name="Timing" type="RichTextLabel" parent="CenterContainer/ScoreDisplay" unique_id=364720257]
 clip_contents = false
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.24705882)
@@ -99,14 +103,14 @@ theme_override_font_sizes/bold_italics_font_size = 8
 theme_override_font_sizes/italics_font_size = 8
 theme_override_font_sizes/mono_font_size = 8
 bbcode_enabled = true
-text = "( +0.12 )"
+text = "( +0.120 )"
 fit_content = true
 autowrap_mode = 0
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1914120927]
+[node name="Vignette" type="TextureRect" parent="." unique_id=1914120927]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,6 +121,7 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_ynw7a")
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1481756575]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -124,7 +129,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer2" unique_id=1993923732]
+[node name="PauseCountdown" type="RichTextLabel" parent="CenterContainer2" unique_id=1993923732]
 clip_contents = false
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
@@ -141,10 +146,20 @@ text = "[b]3"
 fit_content = true
 autowrap_mode = 0
 
-[node name="VingetteTimer" type="Timer" parent="." unique_id=2051709602]
+[node name="VignetteTimer" type="Timer" parent="." unique_id=2051709602]
 wait_time = 0.2
 one_shot = true
 
-[node name="PauseCountdown" type="Timer" parent="." unique_id=2025658640]
+[node name="PauseCountdownTimer" type="Timer" parent="." unique_id=2025658640]
 wait_time = 3.0
+one_shot = true
+
+[node name="ScoreDisplayTimer" type="Timer" parent="." unique_id=1812243524]
+wait_time = 0.4
+one_shot = true
+
+[node name="ZoomTimer" type="Timer" parent="." unique_id=1883382464]
+one_shot = true
+
+[node name="ShakeTimer" type="Timer" parent="." unique_id=1709739644]
 one_shot = true

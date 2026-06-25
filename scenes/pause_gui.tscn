@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dhj1jfp0aa6bl"]
 
-[ext_resource type="Texture2D" uid="uid://co7k17nwn6ft" path="res://placeholders/sample bg.png" id="1_w0a44"]
 [ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="1_y1vgk"]
 
 [node name="PauseGUI" type="Control" unique_id=2088304392]
@@ -10,16 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1303915319]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_w0a44")
-expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=91683314]
 layout_mode = 1
