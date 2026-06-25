@@ -4,13 +4,5 @@
 	{"start":1, "release":3},
 	{"start":1, "release":1},
 	{"start":1, "release":1},
-	{"start":1, "release":3},
-	{"start":100, "release":3},
-	{"start":1, "release":3},
-	{"start":1, "release":3},
-	{"start":1, "release":3},
-	{"start":1, "release":3},
-	{"start":1, "release":3},
-	{"start":1, "release":3},
-	{"start":3, "release":8}
+	{"start":1, "release":3}
 ]
