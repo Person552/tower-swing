@@ -26,7 +26,7 @@ script = ExtResource("4_tbgi4")
 
 [node name="HookPoint0" parent="HookPoints" unique_id=1162302159 instance=ExtResource("6_tefeu")]
 position = Vector2(81, 58)
-type = "pull"
+type = "loop"
 
 [node name="HookPoint1" parent="HookPoints" unique_id=946499217 instance=ExtResource("6_tefeu")]
 position = Vector2(205, 61)
@@ -35,55 +35,73 @@ id = 1
 
 [node name="HookPoint2" parent="HookPoints" unique_id=1474490327 instance=ExtResource("6_tefeu")]
 position = Vector2(355, 52)
+type = "loop"
 id = 2
 
 [node name="HookPoint3" parent="HookPoints" unique_id=493173233 instance=ExtResource("6_tefeu")]
 position = Vector2(495, 54)
+type = "loop"
+id = 3
 
 [node name="HookPoint4" parent="HookPoints" unique_id=359580564 instance=ExtResource("6_tefeu")]
 position = Vector2(672, 51)
+type = "loop"
+id = 4
 
 [node name="HookPoint5" parent="HookPoints" unique_id=1248853429 instance=ExtResource("6_tefeu")]
 position = Vector2(820, 49)
+type = "loop"
+id = 5
 
 [node name="HookPoint6" parent="HookPoints" unique_id=1449280247 instance=ExtResource("6_tefeu")]
 position = Vector2(979, 49)
+type = "loop"
+id = 6
 
 [node name="HookPoint7" parent="HookPoints" unique_id=1302894851 instance=ExtResource("6_tefeu")]
 position = Vector2(1145, 49)
-type = "pull"
+type = "loop"
+id = 7
 
 [node name="HookPoint8" parent="HookPoints" unique_id=2060206556 instance=ExtResource("6_tefeu")]
 position = Vector2(1309, 49)
-type = "pull"
+type = "loop"
+id = 8
 
 [node name="HookPoint9" parent="HookPoints" unique_id=774579998 instance=ExtResource("6_tefeu")]
 position = Vector2(1448, 47)
-type = "pull"
+type = "loop"
+id = 9
 
 [node name="HookPoint10" parent="HookPoints" unique_id=1943518219 instance=ExtResource("6_tefeu")]
 position = Vector2(1596, 51)
-type = "pull"
+type = "loop"
+id = 10
 
 [node name="HookPoint11" parent="HookPoints" unique_id=216774055 instance=ExtResource("6_tefeu")]
 position = Vector2(1761, 55)
-type = "pull"
+type = "loop"
+id = 11
 
 [node name="HookPoint12" parent="HookPoints" unique_id=1815354478 instance=ExtResource("6_tefeu")]
 position = Vector2(1922, 53)
-type = "pull"
+type = "loop"
+id = 12
 
 [node name="HookPoint13" parent="HookPoints" unique_id=831209253 instance=ExtResource("6_tefeu")]
 position = Vector2(2064, 52)
-type = "pull"
+type = "loop"
+id = 13
 
 [node name="HookPoint14" parent="HookPoints" unique_id=570173497 instance=ExtResource("6_tefeu")]
 position = Vector2(2221, 54)
-type = "pull"
+type = "loop"
+id = 14
 
 [node name="HookPoint15" parent="HookPoints" unique_id=1865931048 instance=ExtResource("6_tefeu")]
 position = Vector2(2369, 52)
-type = "pull"
+type = "loop"
+id = 15
 
 [node name="Player" parent="." unique_id=625837165 instance=ExtResource("2_0wfyh")]
 

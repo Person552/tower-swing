@@ -8,8 +8,10 @@
 [node name="Hook" type="Node2D" unique_id=770464561]
 script = ExtResource("1_qfoqi")
 
-[node name="Tip" type="Sprite2D" parent="." unique_id=1907809456]
-texture = ExtResource("1_p5w6b")
+[node name="StickyHandRing" type="Sprite2D" parent="." unique_id=732603424]
+position = Vector2(10, 0)
+texture = ExtResource("4_76t2v")
+offset = Vector2(-12, 0)
 
 [node name="Chain" type="Sprite2D" parent="." unique_id=1322105656]
 texture_repeat = 2
@@ -20,7 +22,5 @@ offset = Vector2(0, -2)
 region_enabled = true
 region_rect = Rect2(0, 0, 4, 4)
 
-[node name="StickyHandRing" type="Sprite2D" parent="." unique_id=732603424]
-position = Vector2(10, 0)
-texture = ExtResource("4_76t2v")
-offset = Vector2(4, 0)
+[node name="Tip" type="Sprite2D" parent="." unique_id=1907809456]
+texture = ExtResource("1_p5w6b")

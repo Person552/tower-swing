@@ -3,33 +3,33 @@
 [ext_resource type="Script" uid="uid://cbld2bk53n63x" path="res://scripts/hook_point.gd" id="1_y31g3"]
 [ext_resource type="Texture2D" uid="uid://b24ijiadwv45" path="res://textures/hookpoints.png" id="2_y31g3"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y31g3"]
+atlas = ExtResource("2_y31g3")
+region = Rect2(32, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgy2h"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rabuv"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7fba"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(0, 32, 16, 16)
+region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43l11"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(0, 48, 16, 16)
+region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_an26g"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(0, 64, 16, 16)
+region = Rect2(32, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r44k5"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xvnol"]
-atlas = ExtResource("2_y31g3")
-region = Rect2(0, 112, 16, 16)
+region = Rect2(32, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_potai"]
 atlas = ExtResource("2_y31g3")
@@ -59,37 +59,40 @@ region = Rect2(16, 80, 16, 16)
 atlas = ExtResource("2_y31g3")
 region = Rect2(16, 112, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvnol"]
+atlas = ExtResource("2_y31g3")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dm574"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgsk7"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(32, 16, 16, 16)
+region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41j5s"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdw3c"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(32, 48, 16, 16)
+region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73c13"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(32, 64, 16, 16)
+region = Rect2(0, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nnhe8"]
 atlas = ExtResource("2_y31g3")
-region = Rect2(32, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxvrk"]
-atlas = ExtResource("2_y31g3")
-region = Rect2(32, 112, 16, 16)
+region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psq6u"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y31g3")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kgy2h")
 }, {
@@ -104,9 +107,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_an26g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r44k5")
 }],
 "loop": 1,
 "name": &"loop",
@@ -114,7 +114,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xvnol")
+"texture": SubResource("AtlasTexture_r44k5")
 }],
 "loop": 1,
 "name": &"loop_hooked",
@@ -153,6 +153,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xvnol")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dm574")
 }, {
 "duration": 1.0,
@@ -166,9 +169,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_73c13")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nnhe8")
 }],
 "loop": 1,
 "name": &"swing",
@@ -176,7 +176,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bxvrk")
+"texture": SubResource("AtlasTexture_nnhe8")
 }],
 "loop": 1,
 "name": &"swing_hooked",
@@ -189,4 +189,4 @@ script = ExtResource("1_y31g3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1647605189]
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_psq6u")
-animation = &"loop"
+animation = &"loop_hooked"

@@ -12,5 +12,6 @@ func _process(_delta: float) -> void:
 	player_pos = $"..".position + $"../Sticky Hand Hardpoint".position
 	self.position = target_pos
 	$StickyHandRing.position.x = self.position.distance_to($"../Sticky Hand Hardpoint".position)
-	$Chain.region_rect.size.x = self.position.length()-$StickyHandRing.texture.get_width()
+	$Chain.region_rect.size.x = self.position.length() - 20 # $StickyHandRing.texture.get_width()
+	# Changed above and altered textures and offset prevent a visual glitch where the arm and ring would disconnect
 	self.look_at(player_pos)
