@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://dgpktfofou54" path="res://scripts/camera.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dtrurqm5eg5uu" path="res://scenes/hook_point.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://bxnha6v8kicd6" path="res://scripts/copycat_clown.gd" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1870406462]
 
@@ -39,5 +40,4 @@ type = "loop"
 id = 2
 
 [node name="Player" parent="." unique_id=625837165 instance=ExtResource("2_0wfyh")]
-
-[connection signal="beat" from="MusicManager" to="Player" method="_on_music_manager_beat"]
+script = ExtResource("7_o6xl0")

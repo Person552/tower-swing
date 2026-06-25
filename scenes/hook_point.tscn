@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtrurqm5eg5uu"]
 
-[ext_resource type="Script" uid="uid://cbld2bk53n63x" path="res://hook_point.gd" id="1_y31g3"]
+[ext_resource type="Script" uid="uid://cbld2bk53n63x" path="res://scripts/hook_point.gd" id="1_y31g3"]
 [ext_resource type="Texture2D" uid="uid://n6mbm7h70k83" path="res://placeholders/hookpoint_loop.png" id="2_rabuv"]
 [ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="3_m7fba"]
 [ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="4_43l11"]

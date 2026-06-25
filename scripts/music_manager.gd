@@ -37,7 +37,7 @@ func _ready():
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	bpm = $Player.stream.bpm
 	current_beat_list = load_beatmap("res://beatmaps/testmap.json")
-	$Player.play()
+	#$Player.play()
 
 func _process(_delta):
 	# Obtain from ticks.
