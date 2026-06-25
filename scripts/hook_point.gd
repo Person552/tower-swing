@@ -9,6 +9,6 @@ extends Node2D
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
-		print(String(self.name)[-1])
-		if String(self.name)[-1].is_valid_int() :
-			self.id = int(String(self.name)[-1])
+		var name_id = String(self.name).replace("HookPoint","")
+		if name_id.is_valid_int() :
+			self.id = name_id
