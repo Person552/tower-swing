@@ -41,15 +41,18 @@ func save_file() :
 	var delay = 0
 	var beat_map_array = []
 	var current_hookpoint_id = -1
+	var index = 0
 	for input in current_beat_list :
 		delay += 1
 		if input == "h" :
-			beat_map_array.append({"start":delay,"release":0,"notes":""})
+			var time_pressed = index*(60.0/bpm)
+			beat_map_array.append({"start":delay,"release":0,"notes":"Time: %ss"%[time_pressed]})
 			current_hookpoint_id += 1
 			delay = 0
 		elif input == "r" :
 			beat_map_array[current_hookpoint_id]["release"] = delay
 			delay = 0
+		index += 1
 	
 	var content = JSON.stringify(beat_map_array, "\t")
 	
@@ -95,7 +98,7 @@ func _ready() -> void:
 	if len(current_beat_list) < $Player.stream.beat_count :
 		for i in range($Player.stream.beat_count-len(current_beat_list)) :
 			current_beat_list.append(" ")
-	print(current_beat_list)
+	#print(current_beat_list)
 	seek_box.max_value = $Player.stream.get_length()-0.1
 	seek_slider.max_value = $Player.stream.get_length()-0.1
 
@@ -149,7 +152,7 @@ func _process(_delta: float) -> void:
 			else :
 				current_beat_list[target_beat] = "r"
 				prev_edited_beat = current_beat
-			print(current_beat_list)
+			#print(current_beat_list)
 	
 	if player_holding :
 		input_rect.color = INPUT_COLOR_DOWN
