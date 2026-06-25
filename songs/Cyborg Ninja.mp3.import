@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Cyborg Ninja.mp3-cc94e1b0455d0b9752570caa10a1
 [params]
 
 loop=false
-loop_offset=0
-bpm=180
-beat_count=0
+loop_offset=0.0
+bpm=160.0
+beat_count=480
 bar_beats=4
