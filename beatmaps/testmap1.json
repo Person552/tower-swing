@@ -1,6 +1,6 @@
 [
 	{
-		"notes": "Time: 1.29310344827586s",
+		"notes": "Time: 1.29310344827586s big pull",
 		"release": 8,
 		"start": 5
 	},
@@ -20,7 +20,7 @@
 		"start": 1
 	},
 	{
-		"notes": "Time: 7.24137931034483s",
+		"notes": "Time: 7.24137931034483s pull",
 		"release": 5,
 		"start": 1
 	},
@@ -55,7 +55,7 @@
 		"start": 1
 	},
 	{
-		"notes": "Time: 17.5862068965517s",
+		"notes": "Time: 17.5862068965517s loop",
 		"release": 4,
 		"start": 2
 	},
