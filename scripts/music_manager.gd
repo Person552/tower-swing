@@ -1,5 +1,7 @@
 extends Node
 
+@export_file("*.json") var beatmap_path = "res://beatmaps/testmap.json"
+
 var time_begin
 var time_delay
 var bpm
@@ -36,7 +38,8 @@ func _ready():
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	bpm = $Player.stream.bpm
-	current_beat_list = load_beatmap("res://beatmaps/testmap.json")
+	if beatmap_path :
+		current_beat_list = load_beatmap(beatmap_path)
 	#$Player.play()
 
 func _process(_delta):

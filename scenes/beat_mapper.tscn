@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://dc3iwum81y1ny"]
 
+[ext_resource type="Script" uid="uid://b3unkbyuvjwva" path="res://scripts/beat_mapper.gd" id="1_7jouc"]
+[ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_xw4ct"]
+[ext_resource type="AudioStream" uid="uid://d2lbruwtwkpym" path="res://sounds/metronome.mp3" id="3_0wntc"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg64t"]
 bg_color = Color(0, 0, 0, 0.49803922)
 corner_radius_top_left = 6
@@ -23,6 +27,15 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_7jouc")
+song = ExtResource("2_xw4ct")
+
+[node name="Player" type="AudioStreamPlayer" parent="." unique_id=710870171]
+stream = ExtResource("2_xw4ct")
+volume_db = -16.0
+
+[node name="Metronome Player" type="AudioStreamPlayer" parent="." unique_id=2038377088]
+stream = ExtResource("3_0wntc")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1290769495]
 layout_mode = 1
@@ -32,71 +45,104 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=513691517]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1523924977]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer" unique_id=388129148]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=513691517]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=388129148]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cg64t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/PanelContainer" unique_id=128105714]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=128105714]
 layout_mode = 2
 
-[node name="MetronomeRect" type="ColorRect" parent="CenterContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1951498843]
+[node name="MetronomeRect" type="ColorRect" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1951498843]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-color = Color(0, 0.4666667, 1, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=786167245]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=786167245]
 layout_mode = 2
 text = "Metronome"
 
-[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/HBoxContainer" unique_id=2057513943]
+[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2057513943]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cg64t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/PanelContainer2" unique_id=276352905]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=276352905]
 layout_mode = 2
 
-[node name="InputRect" type="ColorRect" parent="CenterContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=127555611]
+[node name="InputRect" type="ColorRect" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=127555611]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-color = Color(0.91904455, 0.25155836, 0.33131322, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=265857541]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=265857541]
 layout_mode = 2
 text = "Player Input"
 
-[node name="PanelContainer3" type="PanelContainer" parent="CenterContainer/HBoxContainer" unique_id=2144507779]
+[node name="PanelContainer3" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2144507779]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cg64t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/PanelContainer3" unique_id=771258698]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3" unique_id=771258698]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1003798498]
+[node name="BeatTitle" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1003798498]
 layout_mode = 2
 text = "Current Beat"
 
-[node name="Beat" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=2002473386]
+[node name="Beat" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=2002473386]
 layout_mode = 2
 text = "34 /1042"
 
-[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1363339284]
+[node name="TimeTitle" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1363339284]
 layout_mode = 2
 text = "Current Time"
 
-[node name="Time" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1803675336]
+[node name="Time" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1803675336]
 layout_mode = 2
 text = "1.2 / 79 Seconds"
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1465754109]
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1465754109]
 layout_mode = 2
 theme_override_constants/separation = 16
 theme_override_styles/separator = SubResource("StyleBoxEmpty_doqle")
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1469859368]
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1469859368]
 layout_mode = 2
 text = "Start"
+
+[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=1034090829]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cg64t")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer2" unique_id=345123413]
+layout_mode = 2
+
+[node name="SeekSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2" unique_id=63043978]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 79.0
+step = 0.1
+
+[node name="SeekBox" type="SpinBox" parent="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2" unique_id=181120104]
+layout_mode = 2
+step = 0.1
+custom_arrow_step = 1.0
+
+[node name="SeekButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2" unique_id=1981814613]
+layout_mode = 2
+text = "Seek"
+
+[connection signal="finished" from="Player" to="." method="_on_player_finished"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2/SeekSlider" to="." method="_on_seek_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2/SeekBox" to="." method="_on_seek_box_value_changed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2/SeekButton" to="." method="_on_seek_button_pressed"]
