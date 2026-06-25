@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b24ijiadwv45"
-path="res://.godot/imported/hookpoints.png-3e5c192235eb3095658810675af97101.ctex"
+path="res://.godot/imported/hookpoints.png-aa51f584ea447a2f88bc4cce5ac83f2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholders/hookpoints.png"
-dest_files=["res://.godot/imported/hookpoints.png-3e5c192235eb3095658810675af97101.ctex"]
+source_file="res://textures/hookpoints.png"
+dest_files=["res://.godot/imported/hookpoints.png-aa51f584ea447a2f88bc4cce5ac83f2e.ctex"]
 
 [params]
 
