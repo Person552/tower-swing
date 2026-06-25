@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dc3iwum81y1ny"]
 
 [ext_resource type="Script" uid="uid://b3unkbyuvjwva" path="res://scripts/beat_mapper.gd" id="1_7jouc"]
-[ext_resource type="AudioStream" path="res://songs/Fools Masquerade.mp3" id="2_v6knf"]
+[ext_resource type="AudioStream" uid="uid://dvwf83ar1cf2n" path="res://songs/Fools Masquerade - CHiMERA.mp3" id="2_v6knf"]
 [ext_resource type="AudioStream" uid="uid://226hpkjr87k6" path="res://songs/Cyborg Ninja.mp3" id="2_xw4ct"]
 [ext_resource type="AudioStream" uid="uid://d2lbruwtwkpym" path="res://sounds/metronome.mp3" id="3_0wntc"]
+[ext_resource type="Texture2D" uid="uid://b4rvbbjrlorey" path="res://textures/shader_white.png" id="5_n42sg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg64t"]
 bg_color = Color(0, 0, 0, 0.49803922)
@@ -19,6 +20,12 @@ expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doqle"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynw7a"]
+bg_color = Color(0.19434926, 0.19434929, 0.19434917, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doqle"]
+bg_color = Color(0.48103422, 0.9011167, 0.79317397, 1)
+
 [node name="BeatMapper" type="Control" unique_id=825931372]
 layout_mode = 3
 anchors_preset = 15
@@ -29,7 +36,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7jouc")
-target_path = "res://beatmaps/testmap.json"
+target_path = "res://beatmaps/testmap1.json"
 song = ExtResource("2_v6knf")
 metronome_sound = true
 
@@ -125,27 +132,44 @@ text = "Start"
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cg64t")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer2" unique_id=345123413]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer2" unique_id=94932991]
 layout_mode = 2
 
-[node name="SeekSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2" unique_id=63043978]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=345123413]
+layout_mode = 2
+
+[node name="SeekSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=63043978]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 max_value = 79.0
 step = 0.1
 
-[node name="SeekBox" type="SpinBox" parent="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2" unique_id=181120104]
+[node name="SeekBox" type="SpinBox" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=181120104]
 layout_mode = 2
 step = 0.1
 custom_arrow_step = 1.0
 
-[node name="SeekButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2" unique_id=1981814613]
+[node name="SeekButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1981814613]
 layout_mode = 2
 text = "Seek"
 
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=2065591372]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_ynw7a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_doqle")
+value = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=995709071]
+custom_minimum_size = Vector2(-1, 10)
+custom_maximum_size = Vector2(-1, 10)
+layout_mode = 2
+texture = ExtResource("5_n42sg")
+expand_mode = 1
+
 [connection signal="finished" from="Player" to="." method="_on_player_finished"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="value_changed" from="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2/SeekSlider" to="." method="_on_seek_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2/SeekBox" to="." method="_on_seek_box_value_changed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PanelContainer2/HBoxContainer2/SeekButton" to="." method="_on_seek_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2/SeekSlider" to="." method="_on_seek_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2/SeekBox" to="." method="_on_seek_box_value_changed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2/SeekButton" to="." method="_on_seek_button_pressed"]
