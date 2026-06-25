@@ -7,6 +7,8 @@ extends Node2D
 		$AnimatedSprite2D.animation = type
 @export var id : int
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		print(String(self.name)[-1])
+		if String(self.name)[-1].is_valid_int() :
+			self.id = int(String(self.name)[-1])
