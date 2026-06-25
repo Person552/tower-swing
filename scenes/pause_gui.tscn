@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dhj1jfp0aa6bl"]
+
+[ext_resource type="Texture2D" uid="uid://co7k17nwn6ft" path="res://placeholders/sample bg.png" id="1_w0a44"]
+[ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="1_y1vgk"]
+
+[node name="PauseGUI" type="Control" unique_id=2088304392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1303915319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w0a44")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=91683314]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1939397658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=532121642]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1360649357]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer2" unique_id=1927379531]
+custom_minimum_size = Vector2(8, 8)
+custom_maximum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("1_y1vgk")
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=967639573]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=175451941]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1477901270]
+layout_mode = 2
+text = "RESUME"
+
+[node name="Restart" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=699872887]
+layout_mode = 2
+text = "RESTART"
+
+[node name="Quit" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=644935185]
+layout_mode = 2
+text = "QUIT"
