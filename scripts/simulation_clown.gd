@@ -22,6 +22,7 @@ var time = 0.0
 var current_frame = 0
 
 var recent_hookpoint_type
+var recent_hookpoint_ref
 
 var position_list = []
 
@@ -43,10 +44,13 @@ func get_hookpoint_from_id(id: int) :
 func hook_hookpoint():
 	swing_speed = 0.0
 	hooked = true
+	
 func release_hookpoint() :
 	target_hookpoint += 1
 	hooked = false
 	swing_distance = 0.0
+	if recent_hookpoint_ref.set_release_angle :
+		self.velocity = self.velocity.length() * Vector2.RIGHT.rotated(recent_hookpoint_ref.release_angle)
 
 func take_snapshot() :
 	position_list.append([position.x, position.y])
@@ -83,6 +87,7 @@ func _process(_delta: float) -> void:
 		var hookpoint_ref = get_hookpoint_from_id(target_hookpoint)
 		var hookpoint_type = hookpoint_ref.type
 		recent_hookpoint_type = hookpoint_type
+		recent_hookpoint_ref = hookpoint_ref
 		$Hook.visible = true
 		$Hook.target_pos = hookpoint_ref.position - self.position
 		if swing_distance == 0.0 :

@@ -7,6 +7,9 @@ extends Node2D
 		$AnimatedSprite2D.animation = type
 @export var id : int
 
+@export var set_release_angle = false
+@export_range(0, 360, 0.1, "degrees") var release_angle
+
 var current_offset = Vector2(0.0, 0.0)
 
 const max_drift = 2
