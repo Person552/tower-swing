@@ -6,6 +6,8 @@ const PULL_START_SPEED = 60
 const PULL_ACCELERATION = 6
 const PULL_MAX_SPEED = 500
 
+const LOOP_MIN_DISTANCE = 40
+
 const SIMULATED_FPS = 120
 const RECORDING_FPS = 30 # for best results this should be easily divisible into simulated_fps
 
@@ -100,15 +102,17 @@ func _process(_delta: float) -> void:
 				swing_speed += (self.position.x - hookpoint_ref.position.x) * SWING_SPEED_CHANGE_MULT
 				#swing_speed *= 0.99
 				#swing_speed = sqrt(2*get_gravity().length()*abs(self.position.y - hookpoint_ref.position.y))
-			#elif hookpoint_type == "loop" :
-				#swing_speed += 3
+			elif hookpoint_type == "loop" :
+				if self.position.distance_to(hookpoint_ref.position) < LOOP_MIN_DISTANCE :
+					swing_distance = LOOP_MIN_DISTANCE
+				else :
+					swing_distance *= 0.98
 			#swing_speed *= 0.99
 			velocity = direction * swing_speed
 			
-			if get_slide_collision_count() == 0 :
-				var offset_distance = self.position.distance_to(hookpoint_ref.position)-swing_distance
-				var offset_direction = self.position.direction_to(hookpoint_ref.position)
-				self.position += offset_distance * offset_direction
+			var offset_distance = self.position.distance_to(hookpoint_ref.position)-swing_distance
+			var offset_direction = self.position.direction_to(hookpoint_ref.position)
+			self.position += offset_distance * offset_direction
 			
 		elif hookpoint_type == "pull" :
 			if swing_speed == 0.0 :
@@ -116,6 +120,8 @@ func _process(_delta: float) -> void:
 			swing_speed += PULL_ACCELERATION
 			swing_speed = min(swing_speed, PULL_MAX_SPEED)
 			velocity = self.position.direction_to(hookpoint_ref.position) * swing_speed
+			
+		if hookpoint_type in ["pull"] :
 			if self.position.distance_to(hookpoint_ref.position) < 10 :
 				release_hookpoint()
 
