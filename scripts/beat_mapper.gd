@@ -63,7 +63,7 @@ func save_file() :
 	for input in current_beat_list :
 		delay += 1
 		if input in ["s","p","l","h"] :
-			var time_pressed = index*(60.0/bpm)
+			var time_pressed = round((index*(60/bpm))*100)/100
 			var note_name = {"s":"Swing","p":"Pull","l":"Loop","h":"Unknown (likely an old beatmap)"}[input]
 			beat_map_array.append({"start":delay,"release":0,"notes":"Time: %ss"%[time_pressed],"hookpoint type":note_name})
 			current_hookpoint_id += 1

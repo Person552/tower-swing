@@ -42,8 +42,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7jouc")
-target_filename = "testmap2.json"
-load_image = true
+target_filename = "testmap1.json"
 song = ExtResource("2_v6knf")
 metronome_sound = true
 
