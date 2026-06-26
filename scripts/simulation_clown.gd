@@ -59,7 +59,7 @@ func save_file() :
 	var json_string = JSON.stringify(position_list)
 	var path = "res://clownpaths/new_path.json"
 	var file = FileAccess.open(path, FileAccess.WRITE)
-	print(FileAccess.get_open_error())
+	#print(FileAccess.get_open_error())
 	file.store_string(json_string)
 
 func _ready() -> void:

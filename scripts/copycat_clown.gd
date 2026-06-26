@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	var position_frame = floor(time*FILE_FPS)
 	if position_frame < len(position_list) :
 		var lerp_position = (time-(position_frame/FILE_FPS))*FILE_FPS
-		print(position_frame, " ", lerp_position)
+		#print(position_frame, " ", lerp_position)
 		var frame_position = Vector2(0,0)
 		if position_frame == len(position_list)-1 :
 			frame_position = Vector2(position_list[position_frame][0], position_list[position_frame][1])
