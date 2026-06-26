@@ -1,0 +1,273 @@
+[gd_scene format=3 uid="uid://bfqioc4hr7kwx"]
+
+[ext_resource type="PackedScene" uid="uid://dtrurqm5eg5uu" path="res://scenes/hook_point.tscn" id="1_mpiqk"]
+
+[node name="HookPoints" type="Node" unique_id=1777216216]
+
+[node name="HookPoint0" parent="." unique_id=946499217 instance=ExtResource("1_mpiqk")]
+position = Vector2(24, 0)
+
+[node name="HookPoint1" parent="." unique_id=87488892 instance=ExtResource("1_mpiqk")]
+position = Vector2(40, 0)
+type = "pull"
+id = 1
+
+[node name="HookPoint2" parent="." unique_id=2118642089 instance=ExtResource("1_mpiqk")]
+position = Vector2(58, 0)
+type = "loop"
+id = 2
+
+[node name="HookPoint3" parent="." unique_id=1681487869 instance=ExtResource("1_mpiqk")]
+position = Vector2(75, 0)
+id = 3
+
+[node name="HookPoint4" parent="." unique_id=1263610516 instance=ExtResource("1_mpiqk")]
+position = Vector2(92, 0)
+id = 4
+
+[node name="HookPoint5" parent="." unique_id=1696119185 instance=ExtResource("1_mpiqk")]
+position = Vector2(110, 0)
+id = 5
+
+[node name="HookPoint6" parent="." unique_id=1956294238 instance=ExtResource("1_mpiqk")]
+position = Vector2(130, 0)
+type = "pull"
+id = 6
+
+[node name="HookPoint7" parent="." unique_id=296510280 instance=ExtResource("1_mpiqk")]
+position = Vector2(149, 0)
+id = 7
+
+[node name="HookPoint8" parent="." unique_id=831144151 instance=ExtResource("1_mpiqk")]
+position = Vector2(167, 0)
+id = 8
+
+[node name="HookPoint9" parent="." unique_id=283264151 instance=ExtResource("1_mpiqk")]
+position = Vector2(187, 0)
+id = 9
+
+[node name="HookPoint10" parent="." unique_id=1059935351 instance=ExtResource("1_mpiqk")]
+position = Vector2(202, 0)
+id = 10
+
+[node name="HookPoint11" parent="." unique_id=1160252780 instance=ExtResource("1_mpiqk")]
+position = Vector2(220, 0)
+type = "loop"
+id = 11
+
+[node name="HookPoint12" parent="." unique_id=1806110031 instance=ExtResource("1_mpiqk")]
+position = Vector2(237, 0)
+id = 12
+
+[node name="HookPoint13" parent="." unique_id=718625948 instance=ExtResource("1_mpiqk")]
+position = Vector2(252, 0)
+id = 13
+
+[node name="HookPoint14" parent="." unique_id=1124432914 instance=ExtResource("1_mpiqk")]
+position = Vector2(270, 0)
+id = 14
+
+[node name="HookPoint15" parent="." unique_id=187055777 instance=ExtResource("1_mpiqk")]
+position = Vector2(286, 0)
+id = 15
+
+[node name="HookPoint16" parent="." unique_id=1365359352 instance=ExtResource("1_mpiqk")]
+position = Vector2(306, 0)
+type = "pull"
+id = 16
+
+[node name="HookPoint17" parent="." unique_id=2072487232 instance=ExtResource("1_mpiqk")]
+position = Vector2(326, 0)
+id = 17
+
+[node name="HookPoint18" parent="." unique_id=1486412584 instance=ExtResource("1_mpiqk")]
+position = Vector2(344, 0)
+type = "loop"
+id = 18
+
+[node name="HookPoint19" parent="." unique_id=703226332 instance=ExtResource("1_mpiqk")]
+position = Vector2(360, 0)
+id = 19
+
+[node name="HookPoint20" parent="." unique_id=266954380 instance=ExtResource("1_mpiqk")]
+position = Vector2(378, 0)
+id = 20
+
+[node name="HookPoint21" parent="." unique_id=1655653262 instance=ExtResource("1_mpiqk")]
+position = Vector2(396, 0)
+id = 21
+
+[node name="HookPoint22" parent="." unique_id=1550320471 instance=ExtResource("1_mpiqk")]
+position = Vector2(413, 0)
+id = 22
+
+[node name="HookPoint23" parent="." unique_id=772843057 instance=ExtResource("1_mpiqk")]
+position = Vector2(430, 0)
+id = 23
+
+[node name="HookPoint24" parent="." unique_id=1084405467 instance=ExtResource("1_mpiqk")]
+position = Vector2(451, 0)
+type = "pull"
+id = 24
+
+[node name="HookPoint25" parent="." unique_id=1160067310 instance=ExtResource("1_mpiqk")]
+position = Vector2(469, 0)
+type = "loop"
+id = 25
+
+[node name="HookPoint26" parent="." unique_id=287118854 instance=ExtResource("1_mpiqk")]
+position = Vector2(485, 0)
+id = 26
+
+[node name="HookPoint27" parent="." unique_id=2045577448 instance=ExtResource("1_mpiqk")]
+position = Vector2(505, 0)
+id = 27
+
+[node name="HookPoint28" parent="." unique_id=39952104 instance=ExtResource("1_mpiqk")]
+position = Vector2(525, 0)
+type = "loop"
+id = 28
+
+[node name="HookPoint29" parent="." unique_id=191672404 instance=ExtResource("1_mpiqk")]
+position = Vector2(543, 0)
+id = 29
+
+[node name="HookPoint30" parent="." unique_id=1546004841 instance=ExtResource("1_mpiqk")]
+position = Vector2(559, 0)
+id = 30
+
+[node name="HookPoint31" parent="." unique_id=1963211873 instance=ExtResource("1_mpiqk")]
+position = Vector2(578, 0)
+type = "pull"
+id = 31
+
+[node name="HookPoint32" parent="." unique_id=715239286 instance=ExtResource("1_mpiqk")]
+position = Vector2(596, 0)
+type = "loop"
+id = 32
+
+[node name="HookPoint33" parent="." unique_id=142859732 instance=ExtResource("1_mpiqk")]
+position = Vector2(614, 0)
+id = 33
+
+[node name="HookPoint34" parent="." unique_id=322103509 instance=ExtResource("1_mpiqk")]
+position = Vector2(629, 0)
+type = "pull"
+id = 34
+
+[node name="HookPoint35" parent="." unique_id=417701131 instance=ExtResource("1_mpiqk")]
+position = Vector2(646, 0)
+id = 35
+
+[node name="HookPoint36" parent="." unique_id=243696391 instance=ExtResource("1_mpiqk")]
+position = Vector2(663, 0)
+id = 36
+
+[node name="HookPoint37" parent="." unique_id=2099509196 instance=ExtResource("1_mpiqk")]
+position = Vector2(682, 0)
+id = 37
+
+[node name="HookPoint38" parent="." unique_id=816153502 instance=ExtResource("1_mpiqk")]
+position = Vector2(702, 0)
+id = 38
+
+[node name="HookPoint39" parent="." unique_id=241034222 instance=ExtResource("1_mpiqk")]
+position = Vector2(718, 0)
+id = 39
+
+[node name="HookPoint40" parent="." unique_id=976930633 instance=ExtResource("1_mpiqk")]
+position = Vector2(735, 0)
+type = "pull"
+id = 40
+
+[node name="HookPoint41" parent="." unique_id=389401537 instance=ExtResource("1_mpiqk")]
+position = Vector2(751, 0)
+id = 41
+
+[node name="HookPoint42" parent="." unique_id=1206651272 instance=ExtResource("1_mpiqk")]
+position = Vector2(766, 0)
+id = 42
+
+[node name="HookPoint43" parent="." unique_id=1997130113 instance=ExtResource("1_mpiqk")]
+position = Vector2(780, 0)
+id = 43
+
+[node name="HookPoint44" parent="." unique_id=375884037 instance=ExtResource("1_mpiqk")]
+position = Vector2(796, 0)
+id = 44
+
+[node name="HookPoint45" parent="." unique_id=735732821 instance=ExtResource("1_mpiqk")]
+position = Vector2(810, 0)
+id = 45
+
+[node name="HookPoint46" parent="." unique_id=1475871013 instance=ExtResource("1_mpiqk")]
+position = Vector2(829, 0)
+type = "pull"
+id = 46
+
+[node name="HookPoint47" parent="." unique_id=783813609 instance=ExtResource("1_mpiqk")]
+position = Vector2(847, 0)
+type = "loop"
+id = 47
+
+[node name="HookPoint48" parent="." unique_id=124375998 instance=ExtResource("1_mpiqk")]
+position = Vector2(865, 0)
+id = 48
+
+[node name="HookPoint49" parent="." unique_id=1667042107 instance=ExtResource("1_mpiqk")]
+position = Vector2(880, 0)
+id = 49
+
+[node name="HookPoint50" parent="." unique_id=980405890 instance=ExtResource("1_mpiqk")]
+position = Vector2(903, 0)
+id = 50
+
+[node name="HookPoint51" parent="." unique_id=1436173936 instance=ExtResource("1_mpiqk")]
+position = Vector2(920, 0)
+type = "pull"
+id = 51
+
+[node name="HookPoint52" parent="." unique_id=1384429772 instance=ExtResource("1_mpiqk")]
+position = Vector2(935, 0)
+id = 52
+
+[node name="HookPoint53" parent="." unique_id=1009423763 instance=ExtResource("1_mpiqk")]
+position = Vector2(950, 0)
+id = 53
+
+[node name="HookPoint54" parent="." unique_id=2046724425 instance=ExtResource("1_mpiqk")]
+position = Vector2(965, 0)
+type = "pull"
+id = 54
+
+[node name="HookPoint55" parent="." unique_id=90096609 instance=ExtResource("1_mpiqk")]
+position = Vector2(980, 0)
+type = "loop"
+id = 55
+
+[node name="HookPoint56" parent="." unique_id=1951756149 instance=ExtResource("1_mpiqk")]
+position = Vector2(994, 0)
+id = 56
+
+[node name="HookPoint57" parent="." unique_id=1916591224 instance=ExtResource("1_mpiqk")]
+position = Vector2(1008, 0)
+type = "pull"
+id = 57
+
+[node name="HookPoint58" parent="." unique_id=864434047 instance=ExtResource("1_mpiqk")]
+position = Vector2(1024, 0)
+id = 58
+
+[node name="HookPoint59" parent="." unique_id=1985701988 instance=ExtResource("1_mpiqk")]
+position = Vector2(1040, 0)
+id = 59
+
+[node name="HookPoint60" parent="." unique_id=1917820661 instance=ExtResource("1_mpiqk")]
+position = Vector2(1056, 0)
+type = "pull"
+id = 60
+
+[node name="HookPoint61" parent="." unique_id=2122539975 instance=ExtResource("1_mpiqk")]
+position = Vector2(1072, 0)
+type = "loop"
+id = 61

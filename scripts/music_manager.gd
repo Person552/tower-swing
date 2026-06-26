@@ -1,6 +1,6 @@
 extends Node
 
-@export_file("*.json") var beatmap_path = "res://beatmaps/testmap.json"
+@export_file("*.json") var beatmap_path = "res://beatmaps/fools_masquerade.json"
 
 var time_begin
 var time_delay
