@@ -3,10 +3,11 @@ extends CharacterBody2D
 const WALKSPEED = 60
 
 const PULL_START_SPEED = 60
-const PULL_ACCELERATION = 6
-const PULL_MAX_SPEED = 500
+const PULL_ACCELERATION = 3
+const PULL_MAX_SPEED = 250
 const MAX_VELOCITY = 2000
 
+const LOOP_PULL_FACTOR = 0.99
 const LOOP_MIN_DISTANCE = 40
 
 const SIMULATED_FPS = 120
@@ -115,7 +116,7 @@ func _process(_delta: float) -> void:
 				if self.position.distance_to(hookpoint_ref.position) < LOOP_MIN_DISTANCE :
 					swing_distance = LOOP_MIN_DISTANCE
 				else :
-					swing_distance *= 0.98
+					swing_distance *= LOOP_PULL_FACTOR
 			#swing_speed *= 0.99
 			velocity = direction * swing_speed
 			
