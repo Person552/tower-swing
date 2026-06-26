@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://iqeom123hfn4"]
+
+[ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/simulation_clown.gd" id="1_8dmhu"]
+[ext_resource type="Texture2D" uid="uid://bvt68ps00b5l3" path="res://textures/clown_atlas.png" id="3_1jqyo"]
+[ext_resource type="PackedScene" uid="uid://bcxni5k3qwdem" path="res://scenes/hook.tscn" id="3_bfs6o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psq6u"]
+atlas = ExtResource("3_1jqyo")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bvp3"]
+radius = 8.0
+height = 32.0
+
+[node name="SimulationClown" type="CharacterBody2D" unique_id=625837165]
+script = ExtResource("1_8dmhu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=809574431]
+texture = SubResource("AtlasTexture_psq6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833400411]
+shape = SubResource("CapsuleShape2D_1bvp3")
+
+[node name="Sticky Hand Hardpoint" type="Node2D" parent="." unique_id=586707375]
+position = Vector2(6, 5)
+
+[node name="Hook" parent="." unique_id=783533666 instance=ExtResource("3_bfs6o")]
+visible = false

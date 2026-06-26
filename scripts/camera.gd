@@ -12,12 +12,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#self.position.x = 0
-	var target_x_position = player.position.x + X_OFFSET
-	self.position.y = player.position.y
-	#var target_x_position = 0
-	if abs(self.position.x-target_x_position) < JUMP_DISTANCE :
-		self.position.x = target_x_position
-	if self.position.x != target_x_position :
-		self.position.x += (target_x_position-self.position.x)*SMOOTHING_SPEED*delta
-	#self.position.x = target_x_position
+	if player :
+		#self.position.x = 0
+		var target_x_position = player.position.x + X_OFFSET
+		self.position.y = player.position.y
+		#var target_x_position = 0
+		if abs(self.position.x-target_x_position) < JUMP_DISTANCE :
+			self.position.x = target_x_position
+		if self.position.x != target_x_position :
+			self.position.x += (target_x_position-self.position.x)*SMOOTHING_SPEED*delta
+		#self.position.x = target_x_position

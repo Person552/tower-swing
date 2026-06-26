@@ -5,6 +5,7 @@ const WALKSPEED = 60
 const PULL_START_SPEED = 60
 const PULL_ACCELERATION = 6
 const PULL_MAX_SPEED = 500
+const MAX_VELOCITY = 2000
 
 const LOOP_MIN_DISTANCE = 40
 
@@ -81,6 +82,9 @@ func _process(_delta: float) -> void:
 	if not hooked:
 		velocity += get_gravity()*(1.0/SIMULATED_FPS)
 
+	if velocity.length() > MAX_VELOCITY :
+		velocity = velocity.normalized() * MAX_VELOCITY
+	
 	position += velocity*(1.0/SIMULATED_FPS)
 	
 	if hooked :
@@ -143,7 +147,8 @@ func _notification(what):
 func on_simulated_beat(beat_num: Variant) -> void:
 	if beat_num >= len(music_manager.current_beat_list) :
 		save_file()
-		self.set_process(false)
+		get_tree().quit()
+		#self.set_process(false)
 	else :
 		if music_manager.current_beat_list[beat_num] == "h" :
 				hook_hookpoint()
