@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cwt4bfpf6pd74"]
+
+[ext_resource type="Texture2D" uid="uid://xje85kgkiyho" path="res://textures/circle.svg" id="1_8xki5"]
+[ext_resource type="Script" uid="uid://celtlaiy5dt1n" path="res://scripts/input_preview.gd" id="1_m7awh"]
+
+[node name="InputPreview" type="Node2D" unique_id=1396340649]
+modulate = Color(1, 1, 1, 0.78431374)
+script = ExtResource("1_m7awh")
+
+[node name="OuterCircle" type="Sprite2D" parent="." unique_id=1372062443]
+modulate = Color(1, 0, 0, 0)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_8xki5")
+
+[node name="InnerCircle" type="Sprite2D" parent="." unique_id=394113163]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_8xki5")

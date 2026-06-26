@@ -3,7 +3,7 @@ extends Camera2D
 @onready var player = $"..".find_child("Player")
 @onready var simulation_clown = $"..".find_child("SimulationClown")
 
-const X_OFFSET = 60
+const X_OFFSET = 0
 const SMOOTHING_SPEED = 12
 const JUMP_DISTANCE = 0.1
 
@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 	if player :
 		var player_position
 		if player.find_parent("CopycatClown") :
-			print("ah")
 			player_position = player.find_parent("CopycatClown").position
 		else :
 			player_position = player.position

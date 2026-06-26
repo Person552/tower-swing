@@ -8,6 +8,7 @@ var bpm
 var current_beat
 var current_lateness
 var current_beat_list
+var current_time
 
 signal beat(beat_num)
 
@@ -49,6 +50,8 @@ func _process(_delta):
 	time -= time_delay
 	# May be below 0 (did not begin yet).
 	time = max(0, time)
+	
+	current_time = time
 	
 	var prev_frame_beat = current_beat
 	current_beat = floor((time/60)*bpm)
