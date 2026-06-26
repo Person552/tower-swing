@@ -12,12 +12,12 @@ position = Vector2(40, 0)
 type = "pull"
 id = 1
 
-[node name="HookPoint2" parent="." unique_id=2118642089 instance=ExtResource("1_mpiqk")]
+[node name="HookPoint2" parent="." unique_id=1226240067 instance=ExtResource("1_mpiqk")]
 position = Vector2(58, 0)
 type = "loop"
 id = 2
 
-[node name="HookPoint3" parent="." unique_id=1681487869 instance=ExtResource("1_mpiqk")]
+[node name="HookPoint3" parent="." unique_id=301560027 instance=ExtResource("1_mpiqk")]
 position = Vector2(75, 0)
 id = 3
 
