@@ -135,6 +135,11 @@ func _process(_delta: float) -> void:
 	else :
 		$Hook.visible = false
 
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_file()
+		get_tree().quit() # default behavior
+
 func on_simulated_beat(beat_num: Variant) -> void:
 	if beat_num >= len(music_manager.current_beat_list) :
 		save_file()
@@ -146,4 +151,3 @@ func on_simulated_beat(beat_num: Variant) -> void:
 			#target_hookpoint = (target_hookpoint+1)%3
 			if recent_hookpoint_type != "pull" :
 				release_hookpoint()
-		
