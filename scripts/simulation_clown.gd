@@ -47,8 +47,9 @@ func hook_hookpoint():
 	swing_speed = 0.0
 	hooked = true
 	
-func release_hookpoint() :
-	target_hookpoint += 1
+func release_hookpoint(increment_target = true) :
+	if increment_target :
+		target_hookpoint += 1
 	hooked = false
 	swing_distance = 0.0
 	if recent_hookpoint_ref.set_release_angle :
@@ -151,9 +152,11 @@ func on_simulated_beat(beat_num: Variant) -> void:
 		get_tree().quit()
 		#self.set_process(false)
 	else :
+		print(beat_num, " ", music_manager.current_beat_list[beat_num])
 		if music_manager.current_beat_list[beat_num] == "h" :
 				hook_hookpoint()
 		elif music_manager.current_beat_list[beat_num] == "r" :
-			#target_hookpoint = (target_hookpoint+1)%3
-			#if recent_hookpoint_type != "pull" :
-			release_hookpoint()
+			if recent_hookpoint_type != "pull" :
+				release_hookpoint()
+			else :
+				release_hookpoint(false)
