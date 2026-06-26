@@ -102,7 +102,7 @@ func _on_music_manager_beat(beat_num: Variant) -> void:
 		create_input_preview(BEAT_PREVIEW_DURATION)
 	
 	#try_hook()
-	if beat_list[beat_num] == "h" :
-		try_hook()
-	elif beat_list[beat_num] == "r" :
-		try_release()
+	#if beat_list[beat_num] == "h" :
+		#try_hook()
+	#elif beat_list[beat_num] == "r" :
+		#try_release()

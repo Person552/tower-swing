@@ -9,6 +9,7 @@ var current_beat
 var current_lateness
 var current_beat_list
 var current_time
+var music_start_time = 0.000
 
 signal beat(beat_num)
 
@@ -41,7 +42,7 @@ func _ready():
 	bpm = $MusicPlayer.stream.bpm
 	if beatmap_path :
 		current_beat_list = load_beatmap(beatmap_path)
-	$MusicPlayer.play()
+	$MusicPlayer.play(music_start_time)
 
 func _process(_delta):
 	# Obtain from ticks.

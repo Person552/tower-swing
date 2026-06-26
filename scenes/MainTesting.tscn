@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://b7b4yk3ievf73"]
+
+[ext_resource type="Script" uid="uid://doe86wcrg7to0" path="res://scripts/gameplay_gui.gd" id="1_1e23y"]
+[ext_resource type="Texture2D" uid="uid://n6mbm7h70k83" path="res://placeholders/hookpoint_loop.png" id="2_61jla"]
+[ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="3_haixj"]
+[ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="4_sovtb"]
+[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="5_fgk7r"]
+[ext_resource type="PackedScene" uid="uid://pcle523j8mjq" path="res://scenes/gameplay_testing.tscn" id="6_ijj2o"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_psq6u"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_uo6nn"]
+offsets = PackedFloat32Array(0, 0.48192772, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0.514)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ynw7a"]
+gradient = SubResource("Gradient_uo6nn")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[node name="MainTesting" type="Node" unique_id=590769970]
+
+[node name="GameplayGUI" type="Control" parent="." unique_id=97893995]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_1e23y")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="GameplayGUI" unique_id=2133922235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -10
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = -10
+theme_override_constants/margin_bottom = -10
+
+[node name="MainViewport" type="TextureRect" parent="GameplayGUI/MarginContainer" unique_id=851616366]
+layout_mode = 2
+offset_transform_enabled = true
+texture = SubResource("ViewportTexture_psq6u")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="GameplayGUI" unique_id=1585482308]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("2_61jla")
+texture_pressed = ExtResource("3_haixj")
+texture_hover = ExtResource("4_sovtb")
+texture_disabled = ExtResource("5_fgk7r")
+texture_focused = ExtResource("5_fgk7r")
+stretch_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="GameplayGUI" unique_id=1298320934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScoreDisplay" type="VBoxContainer" parent="GameplayGUI/CenterContainer" unique_id=494703152]
+layout_mode = 2
+
+[node name="QualityWord" type="RichTextLabel" parent="GameplayGUI/CenterContainer/ScoreDisplay" unique_id=1109627099]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.24705882)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+bbcode_enabled = true
+text = "[color=cyan][b]GREAT!"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timing" type="RichTextLabel" parent="GameplayGUI/CenterContainer/ScoreDisplay" unique_id=364720257]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.24705882)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+bbcode_enabled = true
+text = "( +0.120 )"
+fit_content = true
+autowrap_mode = 0
+tab_size = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vignette" type="TextureRect" parent="GameplayGUI" unique_id=1914120927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_ynw7a")
+
+[node name="CenterContainer2" type="CenterContainer" parent="GameplayGUI" unique_id=1481756575]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseCountdown" type="RichTextLabel" parent="GameplayGUI/CenterContainer2" unique_id=1993923732]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 128
+theme_override_font_sizes/bold_font_size = 128
+theme_override_font_sizes/bold_italics_font_size = 128
+theme_override_font_sizes/italics_font_size = 128
+theme_override_font_sizes/mono_font_size = 128
+bbcode_enabled = true
+text = "[b]3"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VignetteTimer" type="Timer" parent="GameplayGUI" unique_id=2051709602]
+wait_time = 0.2
+one_shot = true
+
+[node name="PauseCountdownTimer" type="Timer" parent="GameplayGUI" unique_id=2025658640]
+wait_time = 3.0
+one_shot = true
+
+[node name="ScoreDisplayTimer" type="Timer" parent="GameplayGUI" unique_id=1812243524]
+wait_time = 0.4
+one_shot = true
+
+[node name="ZoomTimer" type="Timer" parent="GameplayGUI" unique_id=1883382464]
+one_shot = true
+
+[node name="ShakeTimer" type="Timer" parent="GameplayGUI" unique_id=1709739644]
+one_shot = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1782100394]
+size = Vector2i(640, 360)
+
+[node name="Main" parent="SubViewport" unique_id=1870406462 instance=ExtResource("6_ijj2o")]
