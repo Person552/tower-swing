@@ -1,6 +1,8 @@
 extends Camera2D
 
-@onready var player = get_node("../Player")
+@onready var player = $"../Player"
+@onready var simulation_clown = $"../SimulationClown"
+
 const X_OFFSET = 60
 const SMOOTHING_SPEED = 12
 const JUMP_DISTANCE = 0.1
@@ -22,3 +24,5 @@ func _process(delta: float) -> void:
 		if self.position.x != target_x_position :
 			self.position.x += (target_x_position-self.position.x)*SMOOTHING_SPEED*delta
 		#self.position.x = target_x_position
+	elif simulation_clown :
+		self.position = simulation_clown.position
