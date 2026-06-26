@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const BEAT_PREVIEW_DURATION = 4
+var beat_preview_duration = 4
+var timing_offset_ms = 200
 
 @onready var copycat_clown = $".."
 @onready var music_manager = $"../../MusicManager"
@@ -89,11 +90,13 @@ func display_timing(offset) :
 
 func try_hook() :
 	var offset = get_input_offset("h")
+	offset += timing_offset_ms/1000.0
 	display_timing(offset)
 
 
 func try_release() :
 	var offset = get_input_offset("r")
+	offset += timing_offset_ms/1000.0
 	display_timing(offset)
 
 
@@ -114,8 +117,8 @@ func _on_music_manager_beat(beat_num: Variant) -> void:
 	#var result = get_next_input_beat(current_beat)
 	#next_beat_time = result[0]
 	#next_beat = result[1]
-	if beat_list[beat_num+BEAT_PREVIEW_DURATION] != "" :
-		create_input_preview(BEAT_PREVIEW_DURATION)
+	if beat_list[beat_num+beat_preview_duration] != "" :
+		create_input_preview(beat_preview_duration)
 	
 	#try_hook()
 	#if beat_list[beat_num] == "h" :
