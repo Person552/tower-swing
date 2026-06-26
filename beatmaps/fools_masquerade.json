@@ -1,0 +1,368 @@
+[
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 1.03s",
+		"release": 6,
+		"start": 5
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 3.36s",
+		"release": 6,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 5.43s",
+		"release": 6,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 7.5s",
+		"release": 2,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 10.6s",
+		"release": 6,
+		"start": 10
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 13.45s",
+		"release": 6,
+		"start": 5
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 16.55s",
+		"release": 2,
+		"start": 6
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 17.59s",
+		"release": 2,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 20.17s",
+		"release": 2,
+		"start": 8
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 22.5s",
+		"release": 6,
+		"start": 7
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 25.09s",
+		"release": 8,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 27.93s",
+		"release": 3,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 29.22s",
+		"release": 4,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 30.78s",
+		"release": 3,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 32.59s",
+		"release": 3,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 34.14s",
+		"release": 3,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 35.69s",
+		"release": 6,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 39.31s",
+		"release": 9,
+		"start": 8
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 43.45s",
+		"release": 2,
+		"start": 7
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 44.48s",
+		"release": 3,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 45.78s",
+		"release": 1,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 46.55s",
+		"release": 3,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 47.84s",
+		"release": 2,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 49.14s",
+		"release": 8,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 51.72s",
+		"release": 9,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 54.31s",
+		"release": 3,
+		"start": 1
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 56.9s",
+		"release": 4,
+		"start": 7
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 60.0s",
+		"release": 11,
+		"start": 8
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 65.95s",
+		"release": 1,
+		"start": 12
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 70.09s",
+		"release": 1,
+		"start": 15
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 71.38s",
+		"release": 5,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 73.97s",
+		"release": 11,
+		"start": 5
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 78.62s",
+		"release": 5,
+		"start": 7
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 80.95s",
+		"release": 8,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 83.79s",
+		"release": 2,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 85.34s",
+		"release": 2,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 87.16s",
+		"release": 3,
+		"start": 5
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 89.22s",
+		"release": 2,
+		"start": 5
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 90.0s",
+		"release": 4,
+		"start": 1
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 92.07s",
+		"release": 5,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 94.4s",
+		"release": 4,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 97.5s",
+		"release": 5,
+		"start": 8
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 99.57s",
+		"release": 3,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 101.38s",
+		"release": 3,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 102.93s",
+		"release": 3,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 104.48s",
+		"release": 3,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 106.03s",
+		"release": 10,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 111.72s",
+		"release": 4,
+		"start": 12
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 113.79s",
+		"release": 4,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 116.38s",
+		"release": 1,
+		"start": 6
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 117.16s",
+		"release": 7,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 120.26s",
+		"release": 1,
+		"start": 5
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 121.03s",
+		"release": 2,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 122.33s",
+		"release": 4,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 124.14s",
+		"release": 9,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 126.98s",
+		"release": 2,
+		"start": 2
+	},
+	{
+		"hookpoint type": "Pull",
+		"notes": "Time: 128.28s",
+		"release": 8,
+		"start": 3
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 131.38s",
+		"release": 5,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 134.48s",
+		"release": 5,
+		"start": 7
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 136.81s",
+		"release": 6,
+		"start": 4
+	},
+	{
+		"hookpoint type": "Swing",
+		"notes": "Time: 139.66s",
+		"release": 10,
+		"start": 5
+	}
+]

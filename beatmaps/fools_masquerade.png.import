@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpn4vpk2t8ref"
-path="res://.godot/imported/new_image.png-5e230e445f8d4dc9993f73f9fdde69bf.ctex"
+uid="uid://do61cqyq3ko0y"
+path="res://.godot/imported/fools_masquerade.png-b3dc2c3eb7e16d663ad9bd6c7c86b819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://beatmaps/new_image.png"
-dest_files=["res://.godot/imported/new_image.png-5e230e445f8d4dc9993f73f9fdde69bf.ctex"]
+source_file="res://beatmaps/fools_masquerade.png"
+dest_files=["res://.godot/imported/fools_masquerade.png-b3dc2c3eb7e16d663ad9bd6c7c86b819.ctex"]
 
 [params]
 
