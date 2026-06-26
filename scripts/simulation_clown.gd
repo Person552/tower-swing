@@ -108,8 +108,6 @@ func _process(_delta: float) -> void:
 				swing_speed = velocity.length()
 				if velocity.dot(direction) < 0 :
 					swing_speed *= -1
-				if hookpoint_type == "loop" :
-					swing_speed *= 2
 			if hookpoint_type == "swing" :
 				#swing_speed = calculate_swing_speed_change(self.position.distance_to(hookpoint_ref.position))
 				swing_speed += (self.position.x - hookpoint_ref.position.x) * SWING_SPEED_CHANGE_MULT
