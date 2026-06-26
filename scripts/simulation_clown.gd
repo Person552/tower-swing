@@ -154,5 +154,5 @@ func on_simulated_beat(beat_num: Variant) -> void:
 				hook_hookpoint()
 		elif music_manager.current_beat_list[beat_num] == "r" :
 			#target_hookpoint = (target_hookpoint+1)%3
-			if recent_hookpoint_type != "pull" :
-				release_hookpoint()
+			#if recent_hookpoint_type != "pull" :
+			release_hookpoint()
