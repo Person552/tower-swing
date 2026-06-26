@@ -152,7 +152,6 @@ func on_simulated_beat(beat_num: Variant) -> void:
 		get_tree().quit()
 		#self.set_process(false)
 	else :
-		print(beat_num, " ", music_manager.current_beat_list[beat_num])
 		if music_manager.current_beat_list[beat_num] == "h" :
 				hook_hookpoint()
 		elif music_manager.current_beat_list[beat_num] == "r" :
