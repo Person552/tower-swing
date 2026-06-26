@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmy7q5ofk7uip" path="res://textures/objects.png" id="1_iiv32"]
 [ext_resource type="Texture2D" uid="uid://do2bfarmgab1j" path="res://textures/warning_light_gradient.png" id="1_s041i"]
-[ext_resource type="Script" uid="uid://banluxdypjsuf" path="res://scenes/spin_in_place.gd" id="2_kn5lv"]
+[ext_resource type="Script" uid="uid://banluxdypjsuf" path="res://scripts/spin_in_place.gd" id="2_kn5lv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kn5lv"]
 atlas = ExtResource("1_iiv32")
