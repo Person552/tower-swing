@@ -5,11 +5,11 @@ var frame_num = 0
 var time = 0.0
 
 const FILE_FPS = 30
-const FILEPATH = "res://clownpaths/new_path.json"
+@export_file("*.json") var path_file = "res://clownpaths/new_path.json"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var file = FileAccess.open(FILEPATH, FileAccess.READ)
+	var file = FileAccess.open(path_file, FileAccess.READ)
 	var json_string = file.get_as_text()
 	file.close()
 	var json = JSON.new()

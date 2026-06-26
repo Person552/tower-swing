@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://bfkh5g0igfy7e"]
 
-[ext_resource type="Script" uid="uid://dm7gd7m5wcq2a" path="res://scripts/simulation_clown.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dikj37ddicnvj" path="res://textures/clown.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bgostii3wdlor" path="res://scripts/player.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bvt68ps00b5l3" path="res://textures/clown_atlas.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bcxni5k3qwdem" path="res://scenes/hook.tscn" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psq6u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g2els")
+"texture": SubResource("AtlasTexture_dqkch")
 }],
 "loop": 1,
 "name": &"default",
@@ -20,7 +24,7 @@ radius = 8.0
 height = 32.0
 
 [node name="Player" type="CharacterBody2D" unique_id=625837165]
-script = ExtResource("1_g2els")
+script = ExtResource("1_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=956571625]
 sprite_frames = SubResource("SpriteFrames_psq6u")

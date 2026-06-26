@@ -22,7 +22,7 @@ const TYPE_COLORS = {
 var current_offset = Vector2(0.0, 0.0)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		var name_id = String(self.name).replace("HookPoint","")
 		if name_id.is_valid_int() :

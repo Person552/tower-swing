@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b30btbema4ox3"]
+
+[ext_resource type="Script" uid="uid://bxnha6v8kicd6" path="res://scripts/copycat_clown.gd" id="1_gmmg7"]
+[ext_resource type="Texture2D" uid="uid://bvt68ps00b5l3" path="res://textures/clown_atlas.png" id="2_x043w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psq6u"]
+atlas = ExtResource("2_x043w")
+region = Rect2(0, 32, 16, 32)
+
+[node name="CopycatClown" type="Node2D" unique_id=1157921788]
+script = ExtResource("1_gmmg7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=809574431]
+visible = false
+texture = SubResource("AtlasTexture_psq6u")
