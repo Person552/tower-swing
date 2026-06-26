@@ -14,6 +14,8 @@ const LOOP_MIN_DISTANCE = 40
 const SIMULATED_FPS = 120
 const RECORDING_FPS = 30 # for best results this should be easily divisible into simulated_fps
 
+const END_DELAY_SECONDS = 2.0
+
 var music_manager
 var hooked = false
 var target_hookpoint = 0
@@ -28,6 +30,8 @@ var recent_hookpoint_type
 var recent_hookpoint_ref
 
 var position_list = []
+
+var end_timer
 
 #const SWING_SPEED_CHANGE_BASE = 1.044
 #const SWING_SPEED_CHANGE_DENOMINATOR = 4.6
@@ -74,6 +78,12 @@ func _process(_delta: float) -> void:
 	time = current_frame*(1.0/SIMULATED_FPS)
 	var prev_frame_beat = current_beat
 	current_beat = floor((time/60)*music_manager.bpm)
+	
+	if end_timer :
+		end_timer -= (1.0/SIMULATED_FPS)
+		if end_timer <= 0 :
+			save_file()
+			get_tree().quit()
 	
 	if current_frame % floor(SIMULATED_FPS/RECORDING_FPS) == 0 :
 		take_snapshot()
@@ -148,8 +158,9 @@ func _notification(what):
 
 func on_simulated_beat(beat_num: Variant) -> void:
 	if beat_num >= len(music_manager.current_beat_list) :
-		save_file()
-		get_tree().quit()
+		if not end_timer :
+			end_timer = END_DELAY_SECONDS
+		
 		#self.set_process(false)
 	else :
 		if music_manager.current_beat_list[beat_num] == "h" :
