@@ -6,6 +6,7 @@ const PULL_START_SPEED = 60
 const PULL_ACCELERATION = 3
 const PULL_MAX_SPEED = 400
 const MAX_VELOCITY = 2000
+const AIR_DRAG_FACTOR = 0.997
 
 const LOOP_PULL_FACTOR = 0.995
 const LOOP_MIN_DISTANCE = 40
@@ -80,8 +81,9 @@ func _process(_delta: float) -> void:
 	if current_beat != prev_frame_beat :
 		on_simulated_beat(current_beat)
 	
-	# Add the gravity.
+	# Apply gravity & air drag
 	if not hooked:
+		velocity *= AIR_DRAG_FACTOR
 		velocity += get_gravity()*(1.0/SIMULATED_FPS)
 
 	if velocity.length() > MAX_VELOCITY :
@@ -136,7 +138,7 @@ func _process(_delta: float) -> void:
 			
 		if hookpoint_type in ["pull"] :
 			if self.position.distance_to(hookpoint_ref.position) < 10 :
-				release_hookpoint()
+				release_hookpoint(false)
 
 	else :
 		$Hook.visible = false
@@ -153,9 +155,6 @@ func on_simulated_beat(beat_num: Variant) -> void:
 		#self.set_process(false)
 	else :
 		if music_manager.current_beat_list[beat_num] == "h" :
-				hook_hookpoint()
+			hook_hookpoint()
 		elif music_manager.current_beat_list[beat_num] == "r" :
-			if recent_hookpoint_type != "pull" :
-				release_hookpoint()
-			else :
-				release_hookpoint(false)
+			release_hookpoint()
