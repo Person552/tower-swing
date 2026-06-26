@@ -173,3 +173,6 @@ one_shot = true
 size = Vector2i(640, 360)
 
 [node name="Main" parent="SubViewport" unique_id=1870406462 instance=ExtResource("6_ijj2o")]
+
+[editable path="SubViewport/Main"]
+[editable path="SubViewport/Main/HookPoints"]

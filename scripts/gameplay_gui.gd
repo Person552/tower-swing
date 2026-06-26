@@ -19,11 +19,11 @@ func pulse_vignette(color = Color(255,255,255)) :
 	$Vignette.modulate = color
 	$VignetteTimer.start()
 
-func display_timing(quality, timing : float) :
+func display_timing(quality, timing : int) :
 	$CenterContainer/ScoreDisplay/QualityWord.text = QUALITY_TEXT[quality]
-	var timing_text = "( %s )"%(timing)
+	var timing_text = "( %sms )"%(timing)
 	if timing > 0 :
-		timing_text = "( +%s )"%(timing)
+		timing_text = "( +%sms )"%(timing)
 	$CenterContainer/ScoreDisplay/Timing.text = timing_text
 	$ScoreDisplayTimer.start()
 

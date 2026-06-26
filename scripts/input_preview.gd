@@ -1,12 +1,12 @@
 extends Node2D
 
-const INNER_SIZE = 0.02
-const OUTER_SIZE = 0.06
+const INNER_SIZE = 0.20
+const OUTER_SIZE = 0.60
 var shrink_time = 1.0
 
 @onready var current_shrink_time = shrink_time
 
-const END_SIZE = 0.03
+const END_SIZE = 0.30
 const END_TIME = 0.1
 
 var shrinking = true

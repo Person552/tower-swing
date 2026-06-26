@@ -11,9 +11,13 @@ const BEAT_PREVIEW_DURATION = 4
 
 @onready var input_preview_scene = preload("res://scenes/input_preview.tscn")
 
-#var past_next_beat
-#var next_beat = ""
-#var next_beat_time = 0
+var quality_thresholds = {
+	"okay":300,
+	"good":200,
+	"great":100,
+	"perfect":50
+}
+
 var input_preview_created = false
 var current_beat = 0
 
@@ -71,14 +75,26 @@ func get_input_offset(input_type) :
 	var beat_time = (60/bpm)*beat_number
 	return current_time-beat_time
 
+
+func display_timing(offset) :
+	var offset_ms = int(offset*1000)
+	var quality = "okay"
+	var best_threshold = INF
+	for threshold in quality_thresholds :
+		if abs(offset_ms) < quality_thresholds[threshold] and best_threshold > quality_thresholds[threshold] :
+			best_threshold = quality_thresholds[threshold]
+			quality = threshold
+	$"../../../../GameplayGUI".display_timing(quality, offset_ms)
+
+
 func try_hook() :
 	var offset = get_input_offset("h")
-	print("hook: ",int(offset*1000), "ms")
+	display_timing(offset)
 
 
 func try_release() :
 	var offset = get_input_offset("r")
-	print("release: ",int(offset*1000), "ms")
+	display_timing(offset)
 
 
 func _process(_delta: float) -> void:
