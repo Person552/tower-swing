@@ -16,7 +16,7 @@ func load_path() :
 	for coordinate in json_content :
 		self.curve.add_point(Vector2(coordinate[0],coordinate[1]))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		if FileAccess.open(target_file, FileAccess.READ).get_as_text() != prev_loaded_file :
 			load_path()

@@ -37,10 +37,10 @@ func load_beatmap(beatmap_path : String) :
 func _ready():
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
-	bpm = $Player.stream.bpm
+	bpm = $MusicPlayer.stream.bpm
 	if beatmap_path :
 		current_beat_list = load_beatmap(beatmap_path)
-	#$Player.play()
+	$MusicPlayer.play()
 
 func _process(_delta):
 	# Obtain from ticks.
