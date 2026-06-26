@@ -266,8 +266,3 @@ id = 59
 position = Vector2(1056, 0)
 type = "pull"
 id = 60
-
-[node name="HookPoint61" parent="." unique_id=2122539975 instance=ExtResource("1_mpiqk")]
-position = Vector2(1072, 0)
-type = "loop"
-id = 61

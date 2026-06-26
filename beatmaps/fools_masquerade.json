@@ -360,9 +360,9 @@
 		"start": 4
 	},
 	{
-		"hookpoint type": "Swing",
+		"hookpoint type": "Loop",
 		"notes": "Time: 139.66s",
-		"release": 10,
+		"release": 12,
 		"start": 5
 	}
 ]
