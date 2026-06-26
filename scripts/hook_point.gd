@@ -1,6 +1,8 @@
 @tool
 extends Node2D
 
+const max_drift = 2
+const light_scale = 1
 const TYPE_COLORS = {
 	"swing":Color("6dffff"),
 	"pull":Color("ef5f4a"),
@@ -19,7 +21,6 @@ const TYPE_COLORS = {
 
 var current_offset = Vector2(0.0, 0.0)
 
-const max_drift = 2
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -27,16 +28,5 @@ func _process(delta: float) -> void:
 		if name_id.is_valid_int() :
 			self.id = name_id
 	else:
-		# Code for hookpoints to randomly float around
-		current_offset.x += randf_range(-0.1,0.1)
-		current_offset.y += randf_range(-0.1,0.1)
-		#
-		if current_offset.x > max_drift:
-			current_offset.x = max_drift
-		if current_offset.x < -max_drift:
-			current_offset.x = -max_drift
-		if current_offset.y > max_drift:
-			current_offset.x = max_drift
-		if current_offset.y < -max_drift:
-			current_offset.x = -max_drift
-		$AnimatedSprite2D.offset = Vector2(int(current_offset.x), int(current_offset.y))
+		# Code for hookpoints to set light size
+		$PointLight2D.scale = Vector2(light_scale, light_scale)

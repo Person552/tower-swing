@@ -205,6 +205,7 @@ animation = &"swing"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=613389608]
 position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.05, 0.05)
 color = Color(0.42745098, 1, 1, 1)
 energy = 0.2
 texture = SubResource("GradientTexture2D_hawv6")

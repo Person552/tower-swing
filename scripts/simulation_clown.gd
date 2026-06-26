@@ -58,7 +58,7 @@ func take_snapshot() :
 
 func save_file() :
 	var json_string = JSON.stringify(position_list)
-	var path = "res://clownpaths/new_path.json"
+	var path = "res://clownpaths/fools_masquerade.json"
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	#print(FileAccess.get_open_error())
 	file.store_string(json_string)
@@ -67,6 +67,7 @@ func _ready() -> void:
 	music_manager = $"../MusicManager"
 
 func _process(_delta: float) -> void:
+	print(Engine.get_frames_per_second())
 	current_frame += 1
 	time = current_frame*(1.0/SIMULATED_FPS)
 	var prev_frame_beat = current_beat
