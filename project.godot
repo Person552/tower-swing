@@ -13,6 +13,7 @@ config_version=5
 config/name="Tower: Swing"
 run/main_scene="uid://b3c6y3y6b5bi4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=120
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=4
 boot_splash/image="uid://bnlcajh5b83ep"
@@ -29,7 +30,10 @@ window/vsync/vsync_mode=0
 
 [editor]
 
+movie_writer/ogv/encoding_speed=2
 movie_writer/movie_file="C:/Users/minec/Documents/0_Clown/tower-swing/videos/video.ogv"
+movie_writer/disable_vsync=true
+movie_writer/fps=120
 
 [gui]
 
