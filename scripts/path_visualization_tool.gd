@@ -11,5 +11,4 @@ func load_path() :
 	var json_content = JSON.parse_string(content)
 	self.curve.clear_points()
 	for coordinate in json_content :
-		print(coordinate)
 		self.curve.add_point(Vector2(coordinate[0],coordinate[1]))

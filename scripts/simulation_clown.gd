@@ -67,7 +67,6 @@ func _ready() -> void:
 	music_manager = $"../MusicManager"
 
 func _process(_delta: float) -> void:
-	print(Engine.get_frames_per_second())
 	current_frame += 1
 	time = current_frame*(1.0/SIMULATED_FPS)
 	var prev_frame_beat = current_beat
