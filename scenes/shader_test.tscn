@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ba668fidq24g3"]
 
-[ext_resource type="TileSet" uid="uid://bb4jkyk6guxgg" path="res://tilesets/placeholder_tiles.tres" id="1_im7wb"]
+[ext_resource type="TileSet" uid="uid://bb4jkyk6guxgg" path="res://tilesets/main_tiles.tres" id="1_im7wb"]
 [ext_resource type="Shader" uid="uid://bu4rnjb78ftv1" path="res://shaders/shader_test.gdshader" id="2_sju7m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3x27y"]

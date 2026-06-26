@@ -123,7 +123,7 @@ func load_beatmap_image(beatmap_path : String) :
 			elif pixel == BEAT_OVERVIEW_GENERIC :
 				beat_list[pixel_x] = "h"
 		prev_pixel = pixel
-	print(beat_list)
+	#print(beat_list)
 	return beat_list
 
 

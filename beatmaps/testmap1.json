@@ -244,5 +244,17 @@
 		"notes": "Time: 61.03s",
 		"release": 2,
 		"start": 3
+	},
+	{
+		"hookpoint type": "Unknown (likely an old beatmap)",
+		"notes": "Time: 142.5s",
+		"release": 1,
+		"start": 313
+	},
+	{
+		"hookpoint type": "Loop",
+		"notes": "Time: 144.31s",
+		"release": 0,
+		"start": 6
 	}
 ]

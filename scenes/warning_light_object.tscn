@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://sarxjxywroqy"]
+
+[ext_resource type="Texture2D" uid="uid://dmy7q5ofk7uip" path="res://textures/objects.png" id="1_iiv32"]
+[ext_resource type="Texture2D" uid="uid://do2bfarmgab1j" path="res://textures/warning_light_gradient.png" id="1_s041i"]
+[ext_resource type="Script" uid="uid://banluxdypjsuf" path="res://scenes/spin_in_place.gd" id="2_kn5lv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn5lv"]
+atlas = ExtResource("1_iiv32")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b3k1"]
+atlas = ExtResource("1_iiv32")
+region = Rect2(8, 24, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s041i"]
+atlas = ExtResource("1_iiv32")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4h7t"]
+atlas = ExtResource("1_iiv32")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psq6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn5lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b3k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s041i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4h7t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WarningLightObject" type="Node2D" unique_id=1199488659]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=67814916]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+color = Color(0.8627451, 0.23921569, 0.23921569, 1)
+energy = 0.2
+texture = ExtResource("1_s041i")
+script = ExtResource("2_kn5lv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=786981850]
+sprite_frames = SubResource("SpriteFrames_psq6u")
+autoplay = "default"
