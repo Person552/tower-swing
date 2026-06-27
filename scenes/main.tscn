@@ -710,7 +710,7 @@ path_file = "res://clownpaths/fools_masquerade.json"
 [node name="InputPreviews" type="Node" parent="." unique_id=442727711]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1876943239]
-position = Vector2(880, 341)
+position = Vector2(9810, 5546)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=984751533]
 shape = SubResource("RectangleShape2D_psq6u")
