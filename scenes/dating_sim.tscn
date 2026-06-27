@@ -1,8 +1,24 @@
 [gd_scene format=3 uid="uid://cieivcolining"]
 
-[ext_resource type="Texture2D" uid="uid://bep12mh6tsype" path="res://placeholders/celeste.webp" id="1_rm0nm"]
+[ext_resource type="Script" uid="uid://ds4k5533tduh6" path="res://scenes/dating_sim.gd" id="1_5w81c"]
 [ext_resource type="Texture2D" uid="uid://dr0y2iwxly8ya" path="res://textures/john_business.png" id="2_5w81c"]
 [ext_resource type="Texture2D" uid="uid://c6cc447biwa62" path="res://textures/say_gex.png" id="3_03dbd"]
+[ext_resource type="Texture2D" uid="uid://wryb2arq7j5h" path="res://textures/clown_full.png" id="3_5w81c"]
+
+[sub_resource type="Gradient" id="Gradient_03dbd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_psq6u"]
+gradient = SubResource("Gradient_03dbd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w81c"]
+bg_color = Color(0, 0, 0, 0.83137256)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 1
 
 [node name="DatingSim" type="Control" unique_id=1472918925]
 layout_mode = 3
@@ -11,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5w81c")
 
 [node name="Background" type="TextureRect" parent="." unique_id=942900088]
 layout_mode = 1
@@ -19,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_rm0nm")
+texture = SubResource("GradientTexture2D_psq6u")
 expand_mode = 1
 
 [node name="John" type="TextureRect" parent="." unique_id=852045181]
@@ -36,13 +53,12 @@ texture = ExtResource("2_5w81c")
 expand_mode = 4
 
 [node name="Bozo" type="TextureRect" parent="." unique_id=1626324794]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 0
 grow_vertical = 2
+texture = ExtResource("3_5w81c")
 expand_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=768578616]
@@ -62,6 +78,7 @@ theme_override_constants/margin_bottom = 16
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=979545563]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w81c")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=379515005]
 layout_mode = 2
@@ -93,7 +110,7 @@ custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
-text = "DR BOZO - Not so Johnny boy."
+text = "DR BOZO - Not so fast, Johnny boy."
 autowrap_mode = 3
 
 [node name="Label4" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=848811117]
@@ -124,6 +141,7 @@ text = "Dr Bozo - Love."
 autowrap_mode = 3
 
 [node name="Love" type="TextureRect" parent="." unique_id=675439428]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,7 +154,18 @@ texture = ExtResource("3_03dbd")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=3775932]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1998836889]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ImportantMessage" type="CenterContainer" parent="." unique_id=3775932]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,6 +173,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer" unique_id=741304165]
+[node name="Label" type="Label" parent="ImportantMessage" unique_id=741304165]
 layout_mode = 2
 text = "Because nothing is more serious than true love..."

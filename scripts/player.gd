@@ -65,7 +65,8 @@ func fail() :
 
 
 func win() :
-	print("A winner is you!")
+	get_tree().change_scene_to_file("res://scenes/dating_sim.tscn")
+	#print("A winner is you!")
 
 
 func create_input_preview(duration_beats) :
