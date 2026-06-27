@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2ujyhu822wg8" path="res://textures/sticky_hand_ring.png" id="4_76t2v"]
 
 [node name="Hook" type="Node2D" unique_id=770464561]
+z_index = 15
 script = ExtResource("1_qfoqi")
 
 [node name="StickyHandRing" type="Sprite2D" parent="." unique_id=732603424]

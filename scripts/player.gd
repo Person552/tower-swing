@@ -163,14 +163,15 @@ func _physics_process(delta: float) -> void:
 			fail_music_lerp_value = min(fail_music_lerp_value+delta*2,1)
 			music_manager.find_child("MusicPlayer").volume_db = linear_to_db(abs(1-fail_music_lerp_value))
 			music_manager.find_child("MusicPlayerFail").volume_db = linear_to_db(fail_music_lerp_value)
-			
+		
+		var hookpoint_ref = get_hookpoint_from_id(current_hook_id)
+		$Hook.target_pos = hookpoint_ref.position
 		if hooked and not failed :
 			angle_lerp_value = min((angle_lerp_value+delta*4.0),1.0)
-			var hookpoint_ref = get_hookpoint_from_id(current_hook_id)
 			prev_frame_angle = $AnimatedSprite2D.rotation
 			$AnimatedSprite2D.rotation = lerp_angle(initial_angle, $AnimatedSprite2D.global_position.angle_to_point(hookpoint_ref.position), angle_lerp_value)
 			#$AnimatedSprite2D.look_at(hookpoint_ref.position)
-			$Hook.target_pos = hookpoint_ref.position
+			
 			$Hook.visible = true
 			angular_momentum = ($AnimatedSprite2D.rotation-prev_frame_angle)
 		else :
