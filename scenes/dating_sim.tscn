@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cieivcolining"]
+
+[ext_resource type="Texture2D" uid="uid://bep12mh6tsype" path="res://placeholders/celeste.webp" id="1_rm0nm"]
+[ext_resource type="Texture2D" uid="uid://dr0y2iwxly8ya" path="res://textures/john_business.png" id="2_5w81c"]
+[ext_resource type="Texture2D" uid="uid://c6cc447biwa62" path="res://textures/say_gex.png" id="3_03dbd"]
+
+[node name="DatingSim" type="Control" unique_id=1472918925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=942900088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rm0nm")
+expand_mode = 1
+
+[node name="John" type="TextureRect" parent="." unique_id=852045181]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_5w81c")
+expand_mode = 4
+
+[node name="Bozo" type="TextureRect" parent="." unique_id=1626324794]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=768578616]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=979545563]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=379515005]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Label1" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=996829747]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "John Business - HAHAHA! Finally, my factory which produces joy can finally start running!"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=449238292]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "John Business - Now I can outproduce EVERY ARTIST IN THE WORLD!!!"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=467720341]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "DR BOZO - Not so Johnny boy."
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=848811117]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "John Business - Pff, you think you can stop me? I have everything in the world against you!"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1400247805]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "Dr Bozo - Everything but one..."
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=2095105083]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "Dr Bozo - Love."
+autowrap_mode = 3
+
+[node name="Love" type="TextureRect" parent="." unique_id=675439428]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 62.85)
+texture = ExtResource("3_03dbd")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=3775932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=741304165]
+layout_mode = 2
+text = "Because nothing is more serious than true love..."
