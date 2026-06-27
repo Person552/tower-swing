@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="4_31a4o"]
 [ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="5_knbxt"]
 [ext_resource type="PackedScene" uid="uid://pcle523j8mjq" path="res://scenes/gameplay_testing.tscn" id="6_e2jls"]
-[ext_resource type="AudioStream" uid="uid://dvwf83ar1cf2n" path="res://songs/Fools Masquerade - CHiMERA.mp3" id="7_gyw58"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_psq6u"]
 viewport_path = NodePath("SubViewport")
@@ -177,15 +176,3 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(640, 360)
 
 [node name="Main" parent="SubViewport" unique_id=1870406462 instance=ExtResource("6_e2jls")]
-
-[node name="MusicPlayer" parent="SubViewport/Main/MusicManager" parent_id_path=PackedInt32Array(1870406462, 67466771) index="0" unique_id=925454887]
-volume_db = 0.0
-bus = &"Music"
-
-[node name="MusicPlayerFail" type="AudioStreamPlayer" parent="SubViewport/Main/MusicManager" parent_id_path=PackedInt32Array(1870406462, 67466771) index="1" unique_id=1735894989]
-stream = ExtResource("7_gyw58")
-pitch_scale = 0.8
-bus = &"Fail Music"
-
-[editable path="SubViewport/Main"]
-[editable path="SubViewport/Main/HookPoints"]

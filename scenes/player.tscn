@@ -70,10 +70,6 @@ visible = false
 [node name="FailureTimer" type="Timer" parent="." unique_id=1100421961]
 one_shot = true
 
-[node name="FailureTimer2" type="Timer" parent="." unique_id=281181046]
-one_shot = true
-
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=2102002862]
 
 [connection signal="timeout" from="FailureTimer" to="." method="_on_failure_timer_timeout"]
-[connection signal="timeout" from="FailureTimer2" to="." method="_on_failure_timer_timeout"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://byh3eet6q7v3e"]
+
+[ext_resource type="Script" uid="uid://bfk5uunqk1tpt" path="res://scripts/music_manager.gd" id="1_hetdf"]
+[ext_resource type="AudioStream" uid="uid://dvwf83ar1cf2n" path="res://songs/Fools Masquerade - CHiMERA.mp3" id="2_jd6i5"]
+
+[node name="MusicManager" type="Node" unique_id=1903832366]
+script = ExtResource("1_hetdf")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1558580309]
+stream = ExtResource("2_jd6i5")
+bus = &"Music"
+
+[node name="MusicPlayerFail" type="AudioStreamPlayer" parent="." unique_id=413032391]
+stream = ExtResource("2_jd6i5")
+pitch_scale = 0.8
+bus = &"Fail Music"

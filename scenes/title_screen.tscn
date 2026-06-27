@@ -147,7 +147,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="SettingsContainer" type="PanelContainer" parent="." unique_id=471524011]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

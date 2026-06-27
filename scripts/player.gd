@@ -56,12 +56,16 @@ func create_input_preview(duration_beats) :
 	var new_scene = input_preview_scene.instantiate()
 	var shrink_time = (60/bpm)*(duration_beats-1)
 	var end_time = ((60/bpm)*current_beat) + ((60/bpm)*(duration_beats-1))
-	new_scene.position = copycat_clown.get_position_at_time(end_time)
-	#print(copycat_clown.position.distance_to(copycat_clown.get_position_at_time((60/bpm)*current_beat)))
-	new_scene.shrink_time = shrink_time
-	input_previews_holder.add_child(new_scene)
-	#new_scene.finished_shrinking.connect(_debug_preview_pop)
-	new_scene.shrinking = true
+	var target_position = copycat_clown.get_position_at_time(end_time)
+	if target_position :
+		new_scene.position = target_position
+		#print(copycat_clown.position.distance_to(copycat_clown.get_position_at_time((60/bpm)*current_beat)))
+		new_scene.shrink_time = shrink_time
+		input_previews_holder.add_child(new_scene)
+		#new_scene.finished_shrinking.connect(_debug_preview_pop)
+		new_scene.shrinking = true
+	else :
+		print("target position out of bounds")
 
 
 func get_next_input_beat(start_beat : int, filter : String) :
@@ -139,7 +143,7 @@ func try_release() :
 		display_timing(offset)
 		hooked = false
 		current_hook_id += 1
-		$FailureTimer2.stop()
+		$FailureTimer.stop()
 
 
 func get_hookpoint_from_id(id: int) :
@@ -191,16 +195,16 @@ func _on_music_manager_beat(beat_num: Variant) -> void:
 		#next_beat = result[1]
 		if beat_num+beat_preview_duration < len(beat_list) and beat_list[beat_num+beat_preview_duration] != "" :
 			create_input_preview(beat_preview_duration)
+			
 		
 		if beat_list[beat_num] == "h" :
 			if recent_hit_hookpoint != song_hook_id  :
-				print(max_off_s-timing_offset_ms)
 				$FailureTimer.start((max_off_s-(timing_offset_ms/1000.0)))
 			
 		elif beat_list[beat_num] == "r" :
 			song_hook_id += 1
 			if current_hook_id != song_hook_id :
-				$FailureTimer2.start((max_off_s-(timing_offset_ms/1000.0)))
+				$FailureTimer.start((max_off_s-(timing_offset_ms/1000.0)))
 
 
 func _on_failure_timer_timeout() -> void:
