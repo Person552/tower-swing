@@ -14,4 +14,4 @@ func _process(_delta: float) -> void:
 	$StickyHandRing.position.x = self.global_position.distance_to($"..".find_child("Sticky Hand Hardpoint").global_position)
 	$Chain.region_rect.size.x = self.position.length() - 20 # $StickyHandRing.texture.get_width()
 	# Changed above and altered textures and offset prevent a visual glitch where the arm and ring would disconnect
-	self.look_at($"../AnimatedSprite2D/Sticky Hand Hardpoint".global_position)
+	self.look_at($"..".find_child("Sticky Hand Hardpoint").global_position)
