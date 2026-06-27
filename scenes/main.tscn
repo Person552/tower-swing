@@ -9,12 +9,33 @@
 [ext_resource type="Script" uid="uid://iiyho3mifs7m" path="res://scripts/path_visualization_tool.gd" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bfkh5g0igfy7e" path="res://scenes/player.tscn" id="9_choun"]
 
+[sub_resource type="Gradient" id="Gradient_trceg"]
+offsets = PackedFloat32Array(0.29032257)
+colors = PackedColorArray(0.31872, 0.30240002, 0.36, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jbj1t"]
+gradient = SubResource("Gradient_trceg")
+
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
-offsets = PackedFloat32Array(0.012820513)
-colors = PackedColorArray(0.65351045, 0.5076245, 0.5484204, 1)
+offsets = PackedFloat32Array(0.29032257)
+colors = PackedColorArray(0.36, 0.30240002, 0.30336, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tipki"]
 gradient = SubResource("Gradient_o6xl0")
+
+[sub_resource type="Gradient" id="Gradient_dp3eg"]
+offsets = PackedFloat32Array(0.29032257)
+colors = PackedColorArray(0.75, 0.67499995, 0.67499995, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yc10j"]
+gradient = SubResource("Gradient_dp3eg")
+
+[sub_resource type="Gradient" id="Gradient_jscy8"]
+offsets = PackedFloat32Array(0.29032257)
+colors = PackedColorArray(0.34, 0.1258, 0.15792993, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pm3ni"]
+gradient = SubResource("Gradient_jscy8")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_85g3d"]
 resource_local_to_scene = true
@@ -29,19 +50,23 @@ gradient = SubResource("Gradient_85g3d")
 width = 256
 height = 256
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y6deb"]
+resource_local_to_scene = true
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_og1vs"]
+offsets = PackedFloat32Array(0.083333336, 0.59294873)
+colors = PackedColorArray(1, 0, 0.4627451, 0, 1, 0.50567913, 0.808787, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2wyq8"]
+gradient = SubResource("Gradient_og1vs")
+width = 256
+height = 256
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ya4ey"]
 resource_local_to_scene = true
 blend_mode = 1
 light_mode = 1
-
-[sub_resource type="Gradient" id="Gradient_trceg"]
-offsets = PackedFloat32Array(0.083333336, 0.59294873)
-colors = PackedColorArray(1, 0, 0.4627451, 0, 0.92324984, 5.2462517e-05, 0.68319416, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jbj1t"]
-gradient = SubResource("Gradient_trceg")
-width = 256
-height = 256
 
 [sub_resource type="Gradient" id="Gradient_muem4"]
 offsets = PackedFloat32Array(0, 0.5224359)
@@ -134,10 +159,39 @@ color = Color(0.728822, 0.728822, 0.728822, 1)
 
 [node name="Ejrms" type="Sprite2D" parent="." unique_id=1257395628]
 z_index = -10
-position = Vector2(35781.223, 22480.25)
-scale = Vector2(1141.7257, 737.6641)
+position = Vector2(1905.5001, 2590.75)
+scale = Vector2(33.10937, 41.226566)
+texture = SubResource("GradientTexture2D_jbj1t")
+
+[node name="Ejrms2" type="Sprite2D" parent="." unique_id=1164440001]
+z_index = -10
+position = Vector2(3624.501, 4397)
+scale = Vector2(44.484406, 16.78125)
 texture = SubResource("GradientTexture2D_tipki")
-metadata/_edit_lock_ = true
+
+[node name="Ejrms3" type="Sprite2D" parent="." unique_id=650718770]
+z_index = -10
+position = Vector2(1805.0001, 403.00003)
+scale = Vector2(101.140686, 41.703125)
+texture = SubResource("GradientTexture2D_yc10j")
+
+[node name="Ejrms4" type="Sprite2D" parent="." unique_id=373604256]
+z_index = -10
+position = Vector2(6745.501, 5665.25)
+scale = Vector2(107.79688, 34.14844)
+texture = SubResource("GradientTexture2D_pm3ni")
+
+[node name="Ejrms5" type="Sprite2D" parent="." unique_id=1493231538]
+z_index = -10
+position = Vector2(3460.9995, 3233.5)
+scale = Vector2(17.375015, 41.046875)
+texture = SubResource("GradientTexture2D_tipki")
+
+[node name="Ejrms6" type="Sprite2D" parent="." unique_id=685774602]
+z_index = -10
+position = Vector2(2867.9998, 2603.25)
+scale = Vector2(11.906255, 21.210938)
+texture = SubResource("GradientTexture2D_tipki")
 
 [node name="Environment Effects" type="Node2D" parent="." unique_id=1857716404]
 
@@ -401,14 +455,22 @@ rotation = -1.5707964
 scale = Vector2(1.7994478, 2.4472792)
 texture = SubResource("GradientTexture2D_choun")
 
+[node name="Black33" type="Sprite2D" parent="Environment Effects/BlackZones" unique_id=758488647]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_85g3d")
+position = Vector2(8776.562, 4889.282)
+rotation = -1.5707964
+scale = Vector2(1.5365309, 3.8657744)
+texture = SubResource("GradientTexture2D_choun")
+
 [node name="GradientLights" type="Node2D" parent="Environment Effects" unique_id=239044793]
 
 [node name="Light1" type="Sprite2D" parent="Environment Effects/GradientLights" unique_id=787296637]
 top_level = true
-material = SubResource("CanvasItemMaterial_ya4ey")
-position = Vector2(9662.001, 5554)
-scale = Vector2(1.94922, 4.0156255)
-texture = SubResource("GradientTexture2D_jbj1t")
+material = SubResource("CanvasItemMaterial_y6deb")
+position = Vector2(9662.001, 5771)
+scale = Vector2(1.94922, 5.273436)
+texture = SubResource("GradientTexture2D_2wyq8")
 
 [node name="Light2" type="Sprite2D" parent="Environment Effects/GradientLights" unique_id=153067964]
 light_mask = 0
@@ -460,9 +522,9 @@ texture = SubResource("GradientTexture2D_0ld40")
 [node name="Light9" type="Sprite2D" parent="Environment Effects/GradientLights" unique_id=1743407789]
 light_mask = 0
 material = SubResource("CanvasItemMaterial_ya4ey")
-position = Vector2(-119.66555, 172.07814)
+position = Vector2(-274.3981, 172.07813)
 rotation = 3.1415927
-scale = Vector2(0.9637688, 5.0898023)
+scale = Vector2(1.2659807, 5.0898023)
 skew = 0.7853982
 texture = SubResource("GradientTexture2D_trceg")
 
@@ -687,7 +749,7 @@ tile_map_data = PackedByteArray("AAAgACoAAgACABEAAAAgACsAAgACABMAAAAgACwAAgARAAE
 tile_set = ExtResource("1_o5qli")
 
 [node name="Objects" type="TileMapLayer" parent="." unique_id=918964038]
-tile_map_data = PackedByteArray("AAAmAC0AAQAAAAAAAgAyAC0AAQAAAAAAAgA+AC0AAQAAAAAAAgAOAC0AAQAAAAAAAgAaAC0AAQAAAAAAAgCMAFQAAQAAAAAAAQCWAFQAAQAAAAAAAQCgAFQAAQAAAAAAAQCqAFQAAQAAAAAAAQC0AFQAAQAAAAAAAQC+AFQAAQAAAAAAAQDeAGAAAQAAAAAAAgD9AGAAAQAAAAAAAgAcAWAAAQAAAAAAAgA7AWAAAQAAAAAAAgBHADUAAQAAAAAAAQBOADUAAQAAAAAAAQBcADQAAQAAAAAAAQBMAB8AAQAAAAAAAQBPADgAAAAKAAMAAACAAC0AAAAHAAQAAAB2ACwAAAADAAIAAAB0AC0AAAADAAIAAABnAC0AAAAHAAIAAACGAC0AAAAMAAIAAABfABwAAAACAAAAAABkABwAAAACAAAAAABkACwAAAACAAAAAABfACwAAAACAAAAAACKAP8AAAACAAIAAACzAAABAAACAAAAAACzAAEBAAACAAQAAACyAAEBAAAMAAIAAAA4ATQAAAAQAAIAAABXATUAAQAAAAAAAgBwATUAAQAAAAAAAgCJAAUBAQAAAAAAAgCzAAUBAQAAAAAAAgDpAHABAAADAAEAAADVAGcBAAAKAAEAAADwAF4BAAADAAEAAADUAF4BAAADAAIAAADtAFoBAAADAAIAAADXAHABAAADAAQAAADlAGcBAAAHAAQAAADYAF4BAAAJAAQAAADfAHABAAAKAAQAAADoAFoBAAAKAAQAAADSAF4BAAAKAAMAAADeAFoBAAAQAAEAAADZAFoBAAAHAAQAAABaAZQBAQAAAAAAAgBLAZQBAQAAAAAAAgBLAYgBAQAAAAAAAgBaAYgBAQAAAAAAAgBaAYIBAQAAAAAAAgBLAYIBAQAAAAAAAgBLAXYBAQAAAAAAAgBaAXYBAQAAAAAAAgBaAWoBAQAAAAAAAgBLAWoBAQAAAAAAAgBLAV4BAQAAAAAAAgBaAV4BAQAAAAAAAgBaAVIBAQAAAAAAAgBLAVIBAQAAAAAAAgBLAUYBAQAAAAAAAgBaAUYBAQAAAAAAAgBaAToBAQAAAAAAAgBLAToBAQAAAAAAAgBLAS4BAQAAAAAAAgBaAS4BAQAAAAAAAgBaAScBAAACAAQAAABLAScBAAACAAQAAABLASYBAAACAAAAAABaASYBAAACAAAAAABpAScBAAAMAAIAAABkAScBAAAKAAEAAACIAWsBAAACAAQAAACIAWoBAAACAAIAAAB9AWsBAAAMAAIAAACCAWsBAAANAAIAAAB0AWsBAAANAAIAAABvAWsBAAANAAIAAABVATQAAAAMAAMAAABvATQAAAAJAAQAAADHAZQBAAAKAAEAAAC/AYUBAAAHAAIAAADWAZcBAAAMAAEAAABwAYUBAAAQAAIAAAB8AXgBAAACAAIAAAB1AXgBAAACAAIAAABLAjoCAAAMAAIAAABKAjECAAANAAEAAACnA8wCAAAMAAIAAAClA7wCAAACAAQAAAClA7sCAAACAAQAAAClA7oCAAACAAAAAAClA7kCAAAMAAEAAAC1A7wCAAAMAAIAAAA=")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("5_tipki")
 
 [node name="MusicManager" parent="." unique_id=1903832366 instance=ExtResource("1_85g3d")]
@@ -710,7 +772,7 @@ path_file = "res://clownpaths/fools_masquerade.json"
 [node name="InputPreviews" type="Node" parent="." unique_id=442727711]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1876943239]
-position = Vector2(880, 341)
+position = Vector2(9937, 5685)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=984751533]
 shape = SubResource("RectangleShape2D_psq6u")
