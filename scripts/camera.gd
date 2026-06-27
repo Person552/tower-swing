@@ -14,7 +14,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if player :
+	if player and player.failed == false :
 		var player_position
 		if player.find_parent("CopycatClown") :
 			player_position = player.find_parent("CopycatClown").position

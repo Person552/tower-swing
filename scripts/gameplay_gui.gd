@@ -10,13 +10,22 @@ var noise = FastNoiseLite.new()
 
 var offset = Vector2.ZERO
 
-const QUALITY_TEXT = {"okay":   "[color=orange][b]OK...",
-			   		  "good":   "[color=green][b]GOOD",
-					  "great":  "[color=cyan][b]GREAT!",
-					  "perfect":"[color=magenta][b]PERFECT!!"}
+const QUALITY_COLORS = {
+"okay":   Color("#FFA500"),
+"good":   Color("008000"),
+"great":  Color("00FFFF"),
+"perfect":Color("FF00FF")
+}
 
-func pulse_vignette(color = Color(255,255,255)) :
-	$Vignette.modulate = color
+const QUALITY_TEXT = {
+"okay":   "[color=orange][b]OK...",
+"good":   "[color=green][b]GOOD",
+"great":  "[color=cyan][b]GREAT!",
+"perfect":"[color=magenta][b]PERFECT!!"
+}
+
+func pulse_vignette(quality : String) :
+	$Vignette.modulate = QUALITY_COLORS[quality]
 	$VignetteTimer.start()
 
 func display_timing(quality, timing : int) :

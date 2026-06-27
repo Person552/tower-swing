@@ -1,20 +1,48 @@
 [gd_scene format=3 uid="uid://bfkh5g0igfy7e"]
 
 [ext_resource type="Script" uid="uid://bgostii3wdlor" path="res://scripts/player.gd" id="1_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://bvt68ps00b5l3" path="res://textures/clown_atlas.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://ds4d3eidudmoy" path="res://textures/clown_swing_sheet.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bcxni5k3qwdem" path="res://scenes/hook.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
-region = Rect2(16, 0, 16, 32)
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psq6u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"default",
 "speed": 5.0
 }]
@@ -28,12 +56,24 @@ script = ExtResource("1_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=956571625]
 sprite_frames = SubResource("SpriteFrames_psq6u")
+autoplay = "default"
+
+[node name="Sticky Hand Hardpoint" type="Node2D" parent="AnimatedSprite2D" unique_id=586707375]
+position = Vector2(-1, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833400411]
 shape = SubResource("CapsuleShape2D_1bvp3")
 
-[node name="Sticky Hand Hardpoint" type="Node2D" parent="." unique_id=586707375]
-position = Vector2(6, 5)
-
 [node name="Hook" parent="." unique_id=783533666 instance=ExtResource("3_qhqgy")]
 visible = false
+
+[node name="FailureTimer" type="Timer" parent="." unique_id=1100421961]
+one_shot = true
+
+[node name="FailureTimer2" type="Timer" parent="." unique_id=281181046]
+one_shot = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=2102002862]
+
+[connection signal="timeout" from="FailureTimer" to="." method="_on_failure_timer_timeout"]
+[connection signal="timeout" from="FailureTimer2" to="." method="_on_failure_timer_timeout"]

@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b7b4yk3ievf73"]
 
-[ext_resource type="Script" uid="uid://doe86wcrg7to0" path="res://scripts/gameplay_gui.gd" id="1_1e23y"]
-[ext_resource type="Texture2D" uid="uid://n6mbm7h70k83" path="res://placeholders/hookpoint_loop.png" id="2_61jla"]
-[ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="3_haixj"]
-[ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="4_sovtb"]
-[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="5_fgk7r"]
-[ext_resource type="PackedScene" uid="uid://pcle523j8mjq" path="res://scenes/gameplay_testing.tscn" id="6_ijj2o"]
+[ext_resource type="Script" uid="uid://doe86wcrg7to0" path="res://scripts/gameplay_gui.gd" id="1_3taie"]
+[ext_resource type="Texture2D" uid="uid://n6mbm7h70k83" path="res://placeholders/hookpoint_loop.png" id="2_j34s0"]
+[ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="3_kvhdf"]
+[ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="4_31a4o"]
+[ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="5_knbxt"]
+[ext_resource type="PackedScene" uid="uid://pcle523j8mjq" path="res://scenes/gameplay_testing.tscn" id="6_e2jls"]
+[ext_resource type="AudioStream" uid="uid://dvwf83ar1cf2n" path="res://songs/Fools Masquerade - CHiMERA.mp3" id="7_gyw58"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_psq6u"]
 viewport_path = NodePath("SubViewport")
@@ -34,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_1e23y")
+script = ExtResource("1_3taie")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="GameplayGUI" unique_id=2133922235]
@@ -62,11 +63,11 @@ offset_right = 48.0
 offset_bottom = 48.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = ExtResource("2_61jla")
-texture_pressed = ExtResource("3_haixj")
-texture_hover = ExtResource("4_sovtb")
-texture_disabled = ExtResource("5_fgk7r")
-texture_focused = ExtResource("5_fgk7r")
+texture_normal = ExtResource("2_j34s0")
+texture_pressed = ExtResource("3_kvhdf")
+texture_hover = ExtResource("4_31a4o")
+texture_disabled = ExtResource("5_knbxt")
+texture_focused = ExtResource("5_knbxt")
 stretch_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="GameplayGUI" unique_id=1298320934]
@@ -175,7 +176,16 @@ snap_2d_vertices_to_pixel = true
 canvas_item_default_texture_filter = 0
 size = Vector2i(640, 360)
 
-[node name="Main" parent="SubViewport" unique_id=1870406462 instance=ExtResource("6_ijj2o")]
+[node name="Main" parent="SubViewport" unique_id=1870406462 instance=ExtResource("6_e2jls")]
+
+[node name="MusicPlayer" parent="SubViewport/Main/MusicManager" parent_id_path=PackedInt32Array(1870406462, 67466771) index="0" unique_id=925454887]
+volume_db = 0.0
+bus = &"Music"
+
+[node name="MusicPlayerFail" type="AudioStreamPlayer" parent="SubViewport/Main/MusicManager" parent_id_path=PackedInt32Array(1870406462, 67466771) index="1" unique_id=1735894989]
+stream = ExtResource("7_gyw58")
+pitch_scale = 0.8
+bus = &"Fail Music"
 
 [editable path="SubViewport/Main"]
 [editable path="SubViewport/Main/HookPoints"]
