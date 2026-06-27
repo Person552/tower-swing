@@ -124,7 +124,7 @@ func display_timing(offset) :
 			quality = threshold
 	gui.display_timing(quality, offset_ms)
 	gui.pulse_vignette(quality)
-	gui.zoom(0.2, 1.05)
+	#gui.zoom(0.2, 1.05)
 
 
 func try_hook() :
