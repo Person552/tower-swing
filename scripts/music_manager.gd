@@ -42,7 +42,7 @@ func _ready():
 	bpm = $MusicPlayer.stream.bpm
 	if beatmap_path :
 		current_beat_list = load_beatmap(beatmap_path)
-	$MusicPlayer.play(music_start_time)
+	#$MusicPlayer.play(music_start_time)
 
 func _process(_delta):
 	# Obtain from ticks.
