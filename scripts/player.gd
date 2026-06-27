@@ -3,6 +3,12 @@ extends CharacterBody2D
 var beat_preview_duration = 4
 var timing_offset_ms = 200
 
+@onready var perfect_grab_sfx: AudioStreamPlayer = $PerfectGrabSFX
+@onready var perfect_release_sfx: AudioStreamPlayer = $PerfectReleaseSFX
+@onready var imperfect_grab_sfx: AudioStreamPlayer = $ImperfectGrabSFX
+@onready var imperfect_release_sfx: AudioStreamPlayer = $ImperfectReleaseSFX
+@onready var death_sfx: AudioStreamPlayer = $DeathSFX
+
 @onready var copycat_clown = $".."
 @onready var music_manager = $"../../MusicManager"
 @onready var input_previews_holder = $"../../InputPreviews"
@@ -42,6 +48,7 @@ var fail_music_lerp_value = 0
 
 func fail() :
 	if not failed :
+		death_sfx.play()
 		failed = true
 		hooked = false
 		input_previews_holder.queue_free()
@@ -126,6 +133,10 @@ func try_hook() :
 	if abs(offset) > max_off_s :
 		fail()
 	else :
+		if abs(offset*1000) <= quality_thresholds["perfect"] :
+			perfect_grab_sfx.play()
+		else :
+			imperfect_grab_sfx.play()
 		display_timing(offset)
 		hooked = true
 		initial_angle = $AnimatedSprite2D.rotation
@@ -140,6 +151,10 @@ func try_release() :
 	if abs(offset) > max_off_s :
 		fail()
 	else :
+		if abs(offset*1000) <= quality_thresholds["perfect"] :
+			perfect_release_sfx.play()
+		else :
+			imperfect_release_sfx.play()
 		display_timing(offset)
 		hooked = false
 		current_hook_id += 1

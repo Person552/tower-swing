@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://dhj1jfp0aa6bl"]
 
+[ext_resource type="Script" uid="uid://dowm47nkjr4yq" path="res://scripts/pause_gui.gd" id="1_y1vgk"]
+
 [node name="PauseGUI" type="Control" unique_id=2088304392]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y1vgk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=91683314]
 layout_mode = 1
@@ -17,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.49803922)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1939397658]
+[node name="PauseMenuContainer" type="CenterContainer" parent="." unique_id=1939397658]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,27 +29,62 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=532121642]
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenuContainer" unique_id=532121642]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=967639573]
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenuContainer/PanelContainer" unique_id=967639573]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=175451941]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuContainer/PanelContainer/MarginContainer" unique_id=175451941]
 layout_mode = 2
 
-[node name="Resume" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1477901270]
+[node name="Resume" type="Button" parent="PauseMenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1477901270]
 layout_mode = 2
 text = "RESUME"
 
-[node name="Restart" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=699872887]
+[node name="Restart" type="Button" parent="PauseMenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=699872887]
 layout_mode = 2
 text = "RESTART"
 
-[node name="Quit" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=644935185]
+[node name="Quit" type="Button" parent="PauseMenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=644935185]
 layout_mode = 2
 text = "QUIT"
+
+[node name="CountdownContainer" type="CenterContainer" parent="." unique_id=625954456]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseCountdown" type="RichTextLabel" parent="CountdownContainer" unique_id=1351816723]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 128
+theme_override_font_sizes/bold_font_size = 128
+theme_override_font_sizes/bold_italics_font_size = 128
+theme_override_font_sizes/italics_font_size = 128
+theme_override_font_sizes/mono_font_size = 128
+bbcode_enabled = true
+text = "[b]3"
+fit_content = true
+autowrap_mode = 0
+
+[node name="UnpauseTimer" type="Timer" parent="." unique_id=486976106]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="PauseMenuContainer/PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="unpause"]
+[connection signal="pressed" from="PauseMenuContainer/PanelContainer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenuContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="UnpauseTimer" to="." method="_on_unpause_timer_timeout"]

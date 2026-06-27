@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://bgostii3wdlor" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ds4d3eidudmoy" path="res://textures/clown_swing_sheet.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bcxni5k3qwdem" path="res://scenes/hook.tscn" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bf3d62jf1w6xr" path="res://sounds/perfect_grab.wav" id="4_fjrip"]
+[ext_resource type="AudioStream" uid="uid://b4udf70rhuccu" path="res://sounds/perfect_release.wav" id="5_smehm"]
+[ext_resource type="AudioStream" uid="uid://degiqhggl4s76" path="res://sounds/Imperfect_grab.wav" id="6_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://b4l448kx3pkmf" path="res://sounds/imperfect_release.wav" id="7_y4r1p"]
+[ext_resource type="AudioStream" uid="uid://bodg8b0ifthe4" path="res://sounds/death.wav" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -70,6 +75,29 @@ visible = false
 [node name="FailureTimer" type="Timer" parent="." unique_id=1100421961]
 one_shot = true
 
-[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=2102002862]
+[node name="PerfectGrabSFX" type="AudioStreamPlayer" parent="." unique_id=1508187937]
+stream = ExtResource("4_fjrip")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="PerfectReleaseSFX" type="AudioStreamPlayer" parent="." unique_id=453629886]
+stream = ExtResource("5_smehm")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="ImperfectGrabSFX" type="AudioStreamPlayer" parent="." unique_id=2126726704]
+stream = ExtResource("6_ur7pv")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="ImperfectReleaseSFX" type="AudioStreamPlayer" parent="." unique_id=898091101]
+stream = ExtResource("7_y4r1p")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="DeathSFX" type="AudioStreamPlayer" parent="." unique_id=1399516482]
+stream = ExtResource("8_smehm")
+volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="timeout" from="FailureTimer" to="." method="_on_failure_timer_timeout"]

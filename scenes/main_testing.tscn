@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://daky2dfjgi7c6" path="res://placeholders/hookpoint_swing.png" id="3_kvhdf"]
 [ext_resource type="Texture2D" uid="uid://dl4os67gqc5v7" path="res://placeholders/hookpoint_pull.png" id="4_31a4o"]
 [ext_resource type="Texture2D" uid="uid://d03gj5c6dqnkl" path="res://textures/hand.png" id="5_knbxt"]
+[ext_resource type="PackedScene" uid="uid://dhj1jfp0aa6bl" path="res://scenes/pause_gui.tscn" id="6_3taie"]
 [ext_resource type="PackedScene" uid="uid://b3c6y3y6b5bi4" path="res://scenes/main.tscn" id="6_3vbo4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_psq6u"]
@@ -56,6 +57,7 @@ texture = SubResource("ViewportTexture_psq6u")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="GameplayGUI" unique_id=1585482308]
+visible = false
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 0
 offset_right = 48.0
@@ -127,32 +129,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_ynw7a")
 
-[node name="CenterContainer2" type="CenterContainer" parent="GameplayGUI" unique_id=1481756575]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PauseCountdown" type="RichTextLabel" parent="GameplayGUI/CenterContainer2" unique_id=1993923732]
-clip_contents = false
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
-theme_override_constants/shadow_outline_size = 8
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/normal_font_size = 128
-theme_override_font_sizes/bold_font_size = 128
-theme_override_font_sizes/bold_italics_font_size = 128
-theme_override_font_sizes/italics_font_size = 128
-theme_override_font_sizes/mono_font_size = 128
-bbcode_enabled = true
-text = "[b]3"
-fit_content = true
-autowrap_mode = 0
-
 [node name="VignetteTimer" type="Timer" parent="GameplayGUI" unique_id=2051709602]
 wait_time = 0.2
 one_shot = true
@@ -170,6 +146,9 @@ one_shot = true
 
 [node name="ShakeTimer" type="Timer" parent="GameplayGUI" unique_id=1709739644]
 one_shot = true
+
+[node name="PauseGUI" parent="." unique_id=2088304392 instance=ExtResource("6_3taie")]
+visible = false
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1782100394]
 snap_2d_transforms_to_pixel = true
