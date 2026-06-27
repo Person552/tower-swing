@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 		offset = Vector2.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") :
 		pass
 		#pulse_vignette()
@@ -81,12 +81,6 @@ func _process(delta: float) -> void:
 		$Vignette.modulate = Color($Vignette.modulate,alpha)
 	else :
 		$Vignette.visible = false
-	
-	if not $PauseCountdownTimer.is_stopped() :
-		$CenterContainer2/PauseCountdown.visible = true
-		$CenterContainer2/PauseCountdown.text = "[b]%s"%(int(ceil($PauseCountdownTimer.time_left)))
-	else :
-		$CenterContainer2/PauseCountdown.visible = false
 		
 	if not $ScoreDisplayTimer.is_stopped() :
 		$CenterContainer/ScoreDisplay.visible = true

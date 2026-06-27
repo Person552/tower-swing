@@ -111,6 +111,7 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=674465852]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[b]Main development :[/b]
 Person552
@@ -147,6 +148,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="SettingsContainer" type="PanelContainer" parent="." unique_id=471524011]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

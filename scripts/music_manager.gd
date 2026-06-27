@@ -13,9 +13,9 @@ var music_start_time = 0.000
 
 signal beat(beat_num)
 
-func load_beatmap(beatmap_path : String) :
+func load_beatmap(target_path : String) :
 	var beat_list = []
-	var file = FileAccess.open(beatmap_path, FileAccess.READ)
+	var file = FileAccess.open(target_path, FileAccess.READ)
 	var json_string = file.get_as_text()
 	file.close()
 	var json = JSON.new()
@@ -37,6 +37,8 @@ func load_beatmap(beatmap_path : String) :
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
 func _ready():
+	if get_tree().current_scene.find_child("PauseGUI") :
+		get_tree().current_scene.find_child("PauseGUI").connect("unpaused", _on_unpaused)
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	bpm = $MusicPlayer.stream.bpm
@@ -62,3 +64,7 @@ func _process(_delta):
 	
 	if current_beat != prev_frame_beat :
 		beat.emit(current_beat)
+
+
+func _on_unpaused(pause_time) :
+	time_begin += pause_time
