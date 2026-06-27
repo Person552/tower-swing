@@ -36,6 +36,13 @@ func display_timing(quality, timing : int) :
 	$CenterContainer/ScoreDisplay/Timing.text = timing_text
 	$ScoreDisplayTimer.start()
 
+func display_failure(average_timing : int) :
+	$CenterContainer/FailureDisplay.visible = true
+	var timing_text = "Average timing: %sms"%(average_timing)
+	if average_timing > 0 :
+		timing_text = "Average timing: +%sms"%(average_timing)
+	$CenterContainer/FailureDisplay/AverageTiming.text = timing_text
+
 func zoom(duration:float,intensity:float) :
 	$ZoomTimer.start(duration)
 	zoom_intensity = intensity

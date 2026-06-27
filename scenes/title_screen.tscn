@@ -267,16 +267,16 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-min_value = -100.0
-step = 0.1
+min_value = -2000.0
+max_value = 2000.0
 tick_count = 11
 ticks_on_borders = true
 
 [node name="DelayBox" type="SpinBox" parent="SettingsContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=887573491]
 layout_mode = 2
 size_flags_horizontal = 8
-min_value = -100.0
-step = 0.1
+min_value = -2000.0
+max_value = 2000.0
 
 [node name="SettingsExitButton" type="Button" parent="SettingsContainer/MarginContainer" unique_id=467121877]
 layout_mode = 2
@@ -289,6 +289,7 @@ text = " X "
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="button_down" from="CreditsContainer/MarginContainer/VBoxContainer/VBoxContainer/CreditsExitButton" to="." method="_on_credits_exit_button_button_down"]
+[connection signal="pressed" from="CreditsContainer/MarginContainer/VBoxContainer/VBoxContainer/SongYTButton" to="." method="_on_song_yt_button_pressed"]
 [connection signal="value_changed" from="SettingsContainer/MarginContainer/VBoxContainer/HBoxContainer3/DelaySlider" to="." method="_on_delay_slider_value_changed"]
 [connection signal="value_changed" from="SettingsContainer/MarginContainer/VBoxContainer/HBoxContainer3/DelayBox" to="." method="_on_delay_box_value_changed"]
 [connection signal="pressed" from="SettingsContainer/MarginContainer/SettingsExitButton" to="." method="_on_settings_exit_button_pressed"]

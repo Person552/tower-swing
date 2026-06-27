@@ -47,3 +47,7 @@ func _on_quit_button_pressed() -> void:
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_packed(main_scene)
+
+
+func _on_song_yt_button_pressed() -> void:
+	OS.shell_open("https://www.youtube.com/watch?v=N6zwAjyqySA")

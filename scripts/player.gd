@@ -46,8 +46,13 @@ var prev_frame_position = Vector2.ZERO
 var fail_velocity = Vector2.ZERO
 var fail_music_lerp_value = 0
 
+var cumulative_offset : float = 0.0
+var average_offset_denominator : int = 0
+var average_offset : float = 0.0
+
 func fail() :
 	if not failed :
+		gui.display_failure(int(average_offset*1000))
 		death_sfx.play()
 		failed = true
 		hooked = false
@@ -57,7 +62,11 @@ func fail() :
 		#music_manager.find_child("MusicPlayer").stop()
 	
 		self.reparent($"../..")
-	
+
+
+func win() :
+	print("A winner is you!")
+
 
 func create_input_preview(duration_beats) :
 	var new_scene = input_preview_scene.instantiate()
@@ -138,6 +147,9 @@ func try_hook() :
 		else :
 			imperfect_grab_sfx.play()
 		display_timing(offset)
+		cumulative_offset += offset
+		average_offset_denominator += 1
+		average_offset = cumulative_offset/average_offset_denominator
 		hooked = true
 		initial_angle = $AnimatedSprite2D.rotation
 		angle_lerp_value = 0.0
@@ -156,6 +168,9 @@ func try_release() :
 		else :
 			imperfect_release_sfx.play()
 		display_timing(offset)
+		cumulative_offset += offset
+		average_offset_denominator += 1
+		average_offset = cumulative_offset/average_offset_denominator
 		hooked = false
 		current_hook_id += 1
 		$FailureTimer.stop()
@@ -225,3 +240,7 @@ func _on_music_manager_beat(beat_num: Variant) -> void:
 
 func _on_failure_timer_timeout() -> void:
 	fail()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	win()
