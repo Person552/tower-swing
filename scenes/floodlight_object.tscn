@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://djam8ownjiqx1"]
+
+[ext_resource type="Texture2D" uid="uid://dmy7q5ofk7uip" path="res://textures/objects.png" id="1_uvum1"]
+[ext_resource type="Texture2D" uid="uid://do2bfarmgab1j" path="res://textures/warning_light_gradient.png" id="2_2xbbq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psq6u"]
+atlas = ExtResource("1_uvum1")
+region = Rect2(112, 16, 16, 24)
+
+[node name="LightObject" type="Node2D" unique_id=1792612047]
+position = Vector2(4, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2000705356]
+texture = SubResource("AtlasTexture_psq6u")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=253547649]
+position = Vector2(0, -7)
+energy = 0.4
+texture = ExtResource("2_2xbbq")
